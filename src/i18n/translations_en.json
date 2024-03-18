@@ -1,0 +1,202 @@
+{   
+    "homePage": {
+        "title": "EUDR Compliance Tracking",
+        "description": "EUDR Compliance Tracking System - Home Screen",
+        "labels": {
+            "navbar": {
+                "title": "EUDR Tracking"
+            },
+            "drawer": {
+                "changePassword": "Change Password",
+                "logout": "Log Out"
+            },
+            "changePasswordModal": {
+                "title": "Change Password",
+                "currentPassword": "Current Password",
+                "newPassword": "New Password",
+                "repeatNewPassword": "Repeat New Password",
+                "confirm": "Confirm"
+            },
+            "orders": {
+                "title": "Orders",
+                "orderNumber": "Order Number",
+                "date": "Date",
+                "volume": "Volume",
+                "searchOrderNumber": "Search Order Number",
+                "dateFrom": "Date From",
+                "dateTo": "Date To",
+                "sortBy": "Sort by",
+                "sortedBy": "Sorted by",
+                "ascending": "ascending",
+                "descending": "descending",
+                "rowsPerPage": "Rows per page",
+                "noRecordsToDisplay": "No records to display"
+            }
+        }
+    },
+    "loginPage": {
+        "title": "EUDR Compliance Tracking",
+        "description": "EUDR Compliance Tracking System",
+        "labels": {
+            "banner": {
+                "title": "EUDR Compliance Tracking Platform",
+                "companyName": "Company Name",
+                "learnMore": "Learn More",
+                "deforestationReports": "Deforestation Reports",
+                "deforestationReportsDescription": "Check the status of coffee suppliers and supplying farms in 10 different government agencies and NGOs",
+                "geopositioning": "Geopositioning",
+                "geopositioningDescription": "View the perimeter of supplying farms on a map and export coordinates to GeoJSON or KML"
+            },
+            "login":{
+                "title": "Log In",
+                "emailAddress": "Email Address",
+                "password": "Password",
+                "showPassword": "Show",
+                "hidePassword": "Hide",
+                "rememberMe": "Remember me",
+                "forgotPassword": "Forgot password?",
+                "signUp": "Don't have an account? Register",
+                "switchLanguage": "Switch Language"
+            },
+            "about": {
+                "title": "About the Platform",
+                "eudr": {
+                    "title": "What is EUDR?",
+                    "details": "The European Union Deforestation Regulation (EUDR) is a legal framework aimed at minimizing the European Union's contribution to global deforestation and forest degradation, as well as reducing greenhouse gas emissions and biodiversity loss.\nThe EUDR is part of the European Green Deal, a strategy with the goal of making Europe climate neutral by 2050. This regulation specifically targets commodities such as timber, soy, beef, cocoa, coffee, palm oil, rubber, and their derivatives.\nOperators and traders, both in Brazil and globally, must comply with the EUDR when exporting certain commodities to the EU. The law bans the import of products originating from areas with any level of deforestation identified up to December 2020."
+                },
+                "deforestation": {
+                    "title": "How is deforestation monitored?",
+                    "details": "To certify that our coffee is deforestation-free, we retrieve information from 10 different government agencies and NGOs that publish data on deforestation. They are:\nSome of these agencies, such as PRODES and MapBiomas, monitor forest regions via satellite and publish deforestation alerts periodically. Others, such as IBAMA and SEMA-MT, publish lists of offenders and embargoed areas.\nThe geolocation of farms are retrieved from SICAR - the Rural Environmental Registry System, and with it we are able to cross-reference deforestation alerts and embargoes with coffee-supplying farms.\nBy using this data, we can guarantee that the coffee being exported comes from farms without deforestation and belonging to an owner without environmental embargoes."
+                },
+                "platform": {
+                    "title": "How does the platform work?",
+                    "details": "The EUDR compliance tracking platform allows our customers to view deforestation reports and the geolocation of farms that supplied coffee for their purchases.\nFor each of their purchases, the customer has access to the list of farms that supplied coffee to it. The platform lists the status of each farm in all of the deforestation monitoring agencies at the time the coffee was shipped, giving transparent access to customers to the same data we use to certify the coffee shipped.\nIn addition to deforestation reports, the geolocation of each farm is displayed in an interactive map. Their coordinates can be exported in GeoJSON and KML formats."
+                },
+                "access": {
+                    "title": "How do I gain access to the platform?",
+                    "details": "Access to the platform is granted on demand to customers. To request access, please contact placeholder@email.com"
+                }
+            },
+            "footer": {
+                "companyName": "Company Name"
+            }
+        }
+    },
+    "reportPage": {
+        "title" : "EUDR Compliance Tracking",
+        "description": "EUDR Compliance Tracking System",
+        "labels": {
+            "navbar": {
+                "title": "Deforestation Report"
+            },
+            "geolocationPanel": {
+                "title": "Geolocation",
+                "farmId": "Farm ID",
+                "city": "City",
+                "state": "State",
+                "area": "Area",
+                "viewOnMaps": "View on Google Maps"
+            },
+            "reportsPanel": {
+                "title": "Deforestation Reports",
+                "name": "Name",
+                "institution": "Institution",
+                "details": "Details",
+                "status": "Status",
+                "statusLocked": "Locked",
+                "statusUnlocked": "Unlocked",
+                "deforestationFree": "Deforestation-free",
+                "deforestationAlert": "Deforestation Alert",
+                "embargoItems": {
+                    "UNIDADES_CONSERVACAO": {
+                        "name": "Natural Conservation Areas",
+                        "institution": "Ministry of Environment and Climate Change",
+                        "unlockedDetails": "Property does not have superposition with natural conservation areas."
+                    },
+                    "EMBARGO_IBAMA_DOCUMENT": {
+                        "name": "IBAMA Embargo - Supplier",
+                        "institution": "IBAMA",
+                        "unlockedDetails": "Supplier is not listed in the IBAMA embargo list."
+                    },
+                    "PRODES_ANY": {
+                        "name": "PRODES Embargo",
+                        "institution": "PRODES",
+                        "unlockedDetails": "Property does not have superposition with PRODES embargoed areas since "
+                    },
+                    "EMBARGO_IBAMA": {
+                        "name": "IBAMA Embargo - Property",
+                        "institution": "IBAMA",
+                        "unlockedDetails": "Property does not have superposition with IBAMA embargoed areas since 31/12/2020."
+                    },
+                    "EMBARGO_ICMBIO_DOCUMENT": {
+                        "name": "ICMBio Embargo - Supplier",
+                        "institution": "ICMBio",
+                        "unlockedDetails": "Supplier is not listed in the ICMBio embargo list."
+                    },
+                    "ALERTA_MAPBIOMAS": {
+                        "name": "MapBiomas Alert",
+                        "institution": "MapBiomas",
+                        "unlockedDetails": "Property does not have superposition with MapBiomas deforestation alerts since 31/12/2020."
+                    },
+                    "SITUACAO_CAR": {
+                        "name": "CAR Status",
+                        "institution": "SICAR",
+                        "unlockedDetails": "Property have CAR with status active or pending."
+                    },
+                    "EMBARGO_SEMA": {
+                        "name": "SEMA-MT Embargo - Property",
+                        "institution": "SEMA-MT",
+                        "unlockedDetails": "Property does not have superposition with SEMA-MT embargoed areas."
+                    },
+                    "EMBARGO_SLAVERIES_DOCUMENT": {
+                        "name": "\"Dirty List\" of Slave Labor",
+                        "institution": "Ministry of Labor and Employment",
+                        "unlockedDetails": "Supplier is not listed in Brazil's \"Dirty List\" of individuals involved in slave labor."
+                    },
+                    "QUILOMBOS": {
+                        "name": "Superposition with Quilombo Communities",
+                        "institution": "INCRA",
+                        "unlockedDetails": "Property does not have superposition with quilombo communities."
+                    },
+                    "TERRAS_INDIGENAS": {
+                        "name": "Superposition with Indigenous Land",
+                        "institution": "FUNAI",
+                        "unlockedDetails": "Property does not have superposition with indigenous land."
+                    },
+                    "EMBARGO_SEMA_DOCUMENT": {
+                        "name": "SEMA-MT Embargo - Supplier",
+                        "institution": "SEMA-MT",
+                        "unlockedDetails": "Supplier is not listed in the SEMA-MT embargo list."
+                    },
+                    "EMBARGO_ICMBIO": {
+                        "name": "ICMBio Embargo - Property",
+                        "institution": "ICMBio",
+                        "unlockedDetails": "Property does not have superposition with ICMBio embargoed areas."
+                    }
+                }
+            },
+            "supplierList": {
+                "title": "Coffee Suppliers",
+                "supplierName": "Supplier Name",
+                "farmId": "Farm ID",
+                "status": "Status",
+                "details": "Details",
+                "deforestationFree": "Deforestation-free",
+                "deforestationAlert": "Deforestation Alert",
+                "geolocation": "Geolocation",
+                "deforestationReports": "Deforestation Reports"
+            },
+            "orderDetails": {
+                "title": "Order Details",
+                "volume": "Volume",
+                "date": "Date",
+                "orderNumber": "Order Number",
+                "customer": "Customer",
+                "supplierNumber": "No. of Suppliers",
+                "status": "Status",
+                "deforestationFree": "Deforestation-free",
+                "deforestationAlert": "Deforestation Alert"
+            }
+        }
+    }
+}
