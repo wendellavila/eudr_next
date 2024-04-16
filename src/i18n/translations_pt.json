@@ -1,0 +1,234 @@
+{
+    "homePage": {
+        "title": "Rastreamento de Conformidade com a EUDR",
+        "description": "Rastreamento de Conformidade com a EUDR",
+        "labels": {
+            "navbar": {
+                "title": "Rastreamento EUDR",
+                "menu": "Menu",
+                "goBack": "Voltar"
+            },
+            "drawer": {
+                "changePassword": "Alterar Senha",
+                "logout": "Sair"
+            },
+            "changePasswordModal": {
+                "title": "Alterar Senha",
+                "currentPassword": "Senha Atual",
+                "newPassword": "Nova Senha",
+                "repeatNewPassword": "Repetir Nova Senha",
+                "confirm": "Confirmar"
+            },
+            "orders": {
+                "title": "Pedidos",
+                "orderNumber": "Número do Pedido",
+                "date": "Data",
+                "volume": "Volume",
+                "min": "Min.",
+                "max": "Máx.",
+                "minVolume": "Volume Mínimo",
+                "maxVolume": "Volume Máximo",
+                "volumeRange": "Intervalo de Volume",
+                "searchOrderNumber": "Pesquisar Número do Pedido",
+                "dateFrom": "Data de",
+                "dateTo": "Data Até",
+                "sortBy": "Ordenar por",
+                "sortedBy": "Ordenado por",
+                "ascending": "ascendente",
+                "descending": "descendente",
+                "rowsPerPage": "Linhas por página",
+                "noOrdersError": "Não foi possível carregar os pedidos",
+                "noFilteredOrdersAlert": "Nenhum pedido encontrado com os filtros selecionados",
+                "clear": "Limpar",
+                "hideFilters": "Esconder Filtros",
+                "showFilters": "Exibir Filtros"
+            }
+        }
+    },
+    "loginPage": {
+        "title": "Rastreamento de Conformidade com a EUDR",
+        "description": "Rastreamento de Conformidade com a EUDR",
+        "labels": {
+            "banner": {
+                "title": "Portal de Rastreamento de Conformidade com a EUDR",
+                "learnMore": "Saiba Mais",
+                "deforestationReports": "Laudos ambientais",
+                "deforestationReportsDescription": "Veja a situação dos fornecedores de café e propriedades rurais em 10 diferentes órgãos governamentais e ONGs",
+                "geopositioning": "Geoposicionamento",
+                "geopositioningDescription": "Veja o perímetro das propriedades rurais no mapa e exporte as coordenadas para GeoJSON ou KML"
+            },
+            "login": {
+                "title": "Entrar",
+                "emailAddress": "E-mail",
+                "password": "Senha",
+                "showPassword": "Exibir",
+                "hidePassword": "Esconder",
+                "rememberMe": "Manter-me logado",
+                "forgotPassword": "Recuperar senha",
+                "signUp": "Não tem uma conta? Registrar",
+                "switchLanguage": "Alterar Idioma",
+                "showHidePassword": "Exibir/Esconder Senha"
+            },
+            "about": {
+                "title": "Sobre o Portal",
+                "eudr": {
+                    "title": "O que é EUDR?",
+                    "details": "O Regulamento da União Europeia para Produtos Livres de Desmatamento (EUDR) é uma legislação que visa minimizar a contribuição da União Europeia para o desmatamento global e a degradação florestal, bem como para as emissões de gases de efeito estufa e a perda de biodiversidade.\nO EUDR faz parte do European Green Deal, uma estratégia que visa tornar a Europa neutra em emissões de gases de efeito estufa até 2050. O regulamento incide sobre madeira, soja, carne bovina, cacau, café, óleo de palma, borracha e derivados.\nOs operadores e comerciantes no Brasil (e a nível global) devem cumprir o EUDR até o final de 2024 ao exportarem certas commodities à UE. A lei proíbe a importação de produtos provenientes de áreas com qualquer nível de desmatamento identificado até dezembro de 2020."
+                },
+                "deforestation" : {
+                    "title": "Como o desmatamento é monitorado?",
+                    "details": "Para certificar que o nosso café é livre de desmatamento, recuperamos informações de 10 diferentes órgãos governamentais e ONGs que divulgam dados públicos sobre desmatamento. São eles:\nAlguns desses órgãos, como o PRODES e o MapBiomas, fazem monitoramento via satélite de regiões de floresta e publicam alertas de desmatamento periodicamente. Já órgãos como o IBAMA e o SEMA-MT publicam listas de infratores e áreas embargadas por desmatamento.\nA geolocalização das propriedades é recuperada junto ao SICAR – Sistema de Cadastro Ambiental Rural, e através dela é possível fazer um cruzamento entre os alertas e embargos de desmatamento e as propriedades fornecedoras de café.\nTendo esses dados, podemos garantir que o café exportado provém de uma propriedade rural sem desmatamento e pertencente a um proprietário sem embargos ambientais."
+                },
+                "platform" : {
+                    "title": "Como funciona o portal?",
+                    "details": "O portal de rastreamento de conformidade com a EUDR permite que nossos clientes tenham acesso aos laudos ambientais e à geolocalização das propriedades rurais que forneceram café para a composição de suas compras.\nPara cada uma de suas compras, o cliente tem acesso a uma listagem de todas as propriedades que forneceram café para a mesma. O portal lista a situação de cada propriedade, no momento em que foi embarcado o café, em cada um dos órgãos de monitoramento de desmatamento. Dessa forma, o cliente tem acesso transparente aos mesmos dados que utilizamos para certificar o café.\nAlém dos laudos ambientais, a localização das propriedades é exibida em um mapa interativo, também sendo possível exportar as coordenadas nos formatos GeoJSON e KML."
+                },
+                "access": {
+                    "title": "Como consigo acesso ao portal?",
+                    "details": "O acesso ao portal é concedo sob demanda aos nossos clientes. Para requisitar acesso, entre em contato pelo e-mail placeholder@email.com."
+                }
+            }
+        }
+    },
+    "reportPage": {
+        "title" : "Rastreamento de Conformidade com a EUDR",
+        "description": "Rastreamento de Conformidade com a EUDR",
+        "labels": {
+            "navbar": {
+                "title": "Relatório EUDR",
+                "menu": "Menu",
+                "goBack": "Voltar"
+            },
+            "geolocationPanel": {
+                "title": "Geolocalização",
+                "coordinates": "Coordenadas",
+                "farmId": "Código CAR",
+                "city": "Cidade",
+                "state": "Estado",
+                "area": "Área (ha)",
+                "viewOnMaps": "Ver no Google Maps",
+                "geolocationNotFound": "Não foi possível recuperar a geolocalização desse fornecedor."
+            },
+            "reportsPanel": {
+                "title": "Laudos Ambientais",
+                "id": "ID do Protocolo",
+                "name": "Nome",
+                "institution": "Instituição",
+                "details": "Detalhes",
+                "status": "Situação",
+                "statusLocked": "Bloqueado",
+                "statusUnlocked": "Desbloqueado",
+                "lastUpdate": "Última atualização",
+                "protocolItems": {
+                    "UNIDADES_CONSERVACAO": {
+                        "name": "Unidades de Conservação",
+                        "institution": "Ministério do Meio Ambiente e Mudança do Clima",
+                        "lockedDetails": "",
+                        "unlockedDetails": ""
+                    },
+                    "EMBARGO_IBAMA_DOCUMENT": {
+                        "name": "Embargo IBAMA - Fornecedor",
+                        "institution": "IBAMA",
+                        "lockedDetails": "",
+                        "unlockedDetails": ""
+                    },
+                    "PRODES_ANY": {
+                        "name": "Embargo PRODES",
+                        "institution": "PRODES",
+                        "lockedDetails": "",
+                        "unlockedDetails": ""
+                    },
+                    "EMBARGO_IBAMA": {
+                        "name": "Embargo IBAMA - Propriedade",
+                        "institution": "IBAMA",
+                        "lockedDetails": "",
+                        "unlockedDetails": ""
+                    },
+                    "EMBARGO_ICMBIO_DOCUMENT": {
+                        "name": "Embargo ICMBio - Fornecedor",
+                        "institution": "ICMBio",
+                        "lockedDetails": "",
+                        "unlockedDetails": ""
+                    },
+                    "ALERTA_MAPBIOMAS": {
+                        "name": "Alerta MapBiomas",
+                        "institution": "MapBiomas",
+                        "lockedDetails": "",
+                        "unlockedDetails": ""
+                    },
+                    "SITUACAO_CAR": {
+                        "name": "Situação CAR",
+                        "institution": "SICAR",
+                        "lockedDetails": "",
+                        "unlockedDetails": ""
+                    },
+                    "EMBARGO_SEMA": {
+                        "name": "Embargo SEMA-MT",
+                        "institution": "SEMA-MT",
+                        "lockedDetails": "",
+                        "unlockedDetails": ""
+                    },
+                    "EMBARGO_SLAVERIES_DOCUMENT": {
+                        "name": "Lista Suja do Trabalho Escravo",
+                        "institution": "Ministério do Trabalho e Emprego",
+                        "lockedDetails": "",
+                        "unlockedDetails": ""
+                    },
+                    "QUILOMBOS": {
+                        "name": "Sobreposição com Quilombos",
+                        "institution": "INCRA",
+                        "lockedDetails": "",
+                        "unlockedDetails": ""
+                    },
+                    "TERRAS_INDIGENAS": {
+                        "name": "Sobreposição com Terras Indígenas",
+                        "institution": "FUNAI",
+                        "lockedDetails": "",
+                        "unlockedDetails": ""
+                    },
+                    "EMBARGO_SEMA_DOCUMENT": {
+                        "name": "Embargo SEMA-MT Fornecedor",
+                        "institution": "SEMA-MT",
+                        "lockedDetails": "",
+                        "unlockedDetails": ""
+                    },
+                    "EMBARGO_ICMBIO": {
+                        "name": "Embargo ICMBio - Propriedade",
+                        "institution": "ICMBio",
+                        "lockedDetails": "",
+                        "unlockedDetails": ""
+                    }
+                }
+            },
+            "suppliersList": {
+                "title": "Fornecedores de Café",
+                "supplierName": "Nome do Fornecedor",
+                "farmId": "Código CAR da Propriedade",
+                "status": "Situação",
+                "details": "Detalhes",
+                "statusLocked": "Bloqueado",
+                "statusUnlocked": "Desbloqueado",
+                "geolocation": "Geolocalização",
+                "deforestationReports": "Laudos Ambientais",
+                "expand": "Expandir",
+                "close": "Fechar",
+                "exportReports": "Exportar Laudos",
+                "exportCoordinates": "Exportar Coordenadas",
+                "exportAllSuppliers": "Exportar Todos os Fornecedores",
+                "noSuppliersError": "Não foi possível carregar a lista de fornecedores"
+            },
+            "orderDetails": {
+                "title": "Detalhes do Pedido",
+                "volume": "Volume",
+                "date": "Data",
+                "orderNumber": "Número do Pedido",
+                "customer": "Cliente",
+                "supplierNumber": "Nº de Fornecedores",
+                "status": "Situação",
+                "statusLocked": "Bloqueado",
+                "statusUnlocked": "Desbloqueado",
+                "noOrderDetailsError": "Não foi possível carregar os detalhes do pedido"
+            }
+        }
+    }
+}

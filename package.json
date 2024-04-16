@@ -1,0 +1,47 @@
+{
+  "name": "eudr",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm run open-browser-windows && next dev",
+    "open-browser-linux": "open http://localhost:3000",
+    "open-browser-windows": "start http://localhost:3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next build"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@iconify/react": "^4.1.1",
+    "@jlandrum/tokml": "^0.6.1-ts2",
+    "@mui/material-nextjs": "^5.15.9",
+    "@mui/x-date-pickers": "^6.19.6",
+    "@react-google-maps/api": "^2.19.2",
+    "@vis.gl/react-google-maps": "^0.8.3",
+    "dayjs": "^1.11.10",
+    "exceljs": "^4.4.0",
+    "next": "^14.0.0",
+    "next-image-export-optimizer": "^1.12.3",
+    "next-intl": "^3.7.0",
+    "react": "^18.2.0",
+    "react-component-export-image": "^1.0.6",
+    "react-custom-scrollbars-2": "^4.5.0",
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.8.1",
+    "tailwindcss-patterns": "^0.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
