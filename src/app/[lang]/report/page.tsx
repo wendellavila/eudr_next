@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode,useEffect,useRef,useState } from 'react';
+import { ReactNode,Suspense,useEffect,useRef,useState } from 'react';
 import { useTranslations } from 'next-intl';
 import {
   Button,Card,Grid,IconButton,Menu,MenuItem,Skeleton,
@@ -851,19 +851,21 @@ export default function ReportPage() : ReactNode {
   }, [router, oid, lang]);
   
   return(
-    <div className="flex flex-col h-[100vh] bg-surface">
-      <ReportNavbar reportData={reportData}/>
-      <main id="report" className="grow">
-        <Scrollbars universal>
-          <div className="flex flex-col h-full">
-            <div className="grow">
-              <OrderDetails reportData={reportData}/>
-              <SuppliersList reportData={reportData}/>
+    <Suspense>
+      <div className="flex flex-col h-[100vh] bg-surface">
+        <ReportNavbar reportData={reportData}/>
+        <main id="report" className="grow">
+          <Scrollbars universal>
+            <div className="flex flex-col h-full">
+              <div className="grow">
+                <OrderDetails reportData={reportData}/>
+                <SuppliersList reportData={reportData}/>
+              </div>
+              <CopyrightText className="mt-4 mb-2"/>
             </div>
-            <CopyrightText className="mt-4 mb-2"/>
-          </div>
-        </Scrollbars>
-      </main>
-    </div>
+          </Scrollbars>
+        </main>
+      </div>
+    </Suspense>
   );
 }

@@ -1,5 +1,5 @@
 'use client';
-import { ReactNode,useEffect,useState } from 'react';
+import { ReactNode,Suspense,useEffect,useState } from 'react';
 import Image from 'next/image';
 import { useParams,useRouter,useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
@@ -65,85 +65,87 @@ function LoginForm() : ReactNode {
   }, [router, lang, newSearchParams]);
 
   return (
-    <Box component="form" onSubmit={handleSubmit}>
-      <Typography component="h2" variant="h5" className="text-center">
-        {i18n('title')}
-      </Typography>
-      <TextField
-        required
-        fullWidth
-        id="email"
-        name="email"
-        label={i18n('emailAddress')}
-        variant="outlined"
-        margin="normal"
-        autoComplete="email"
-        onChange={(event) => setEmail(event.target.value)}
-      />
-      <TextField required fullWidth
-        id="password"
-        name="password"
-        label={i18n('password')}
-        variant="outlined"
-        margin="normal"
-        type={isPasswordVisible ? "text" : "password"}
-        autoComplete="current-password"
-        InputProps={{ // <-- This is where the toggle button is added.
-          endAdornment: (
-            <InputAdornment position="end" >
-              <IconButton
-                title={isPasswordVisible ? i18n('hidePassword') : i18n('showPassword')}
-                aria-label={i18n('showHidePassword')}
-                onMouseDown={(event) => {
-                  event.preventDefault();
-                  setPasswordVisibility((currentPasswodVisibility) => !currentPasswodVisibility);
-                }}
-              >
-                {<Icon
-                  className={`${isPasswordInputFocused ? 'text-primary' : 'text-foreground/45'}`}
-                  icon={isPasswordVisible ? "material-symbols:visibility-off-outline" : "material-symbols:visibility-outline"}
-                />}
-              </IconButton>
-            </InputAdornment>
-          )
-        }}
-        onFocus={() => setPasswordInputFocus(true)}
-        onBlur={() => setPasswordInputFocus(false)}
-        onChange={(event) => setPassword(event.target.value)}
-      />
-      <FormControlLabel
-        control={<Checkbox value="remember" color="primary" name="rememberMe"/>}
-        label={i18n('rememberMe')}
-      />
-      { errorMessage && 
-        <div className="flex flex-row items-center mt-4">
-          <Icon icon="mdi:info-outline" width={18} className="mr-1 text-red-600"/>
-          <Typography variant="body1" className="text-red-600">{errorMessage}</Typography>
-        </div>
-      }
-      <Button
-        type="submit"
-        fullWidth
-        variant="contained"
-        color="primary"
-        className="mt-6 mb-4"
-        disabled={password.length < 8 || !(/^\S+@\S+$/.test(email))}
-      >
-        {i18n('title')}
-      </Button>
-      <Grid container>
-        <Grid item xs>
-          <Link href="#" variant="body2">
-            {i18n('forgotPassword')}
-          </Link>
+    <Suspense>
+      <Box component="form" onSubmit={handleSubmit}>
+        <Typography component="h2" variant="h5" className="text-center">
+          {i18n('title')}
+        </Typography>
+        <TextField
+          required
+          fullWidth
+          id="email"
+          name="email"
+          label={i18n('emailAddress')}
+          variant="outlined"
+          margin="normal"
+          autoComplete="email"
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        <TextField required fullWidth
+          id="password"
+          name="password"
+          label={i18n('password')}
+          variant="outlined"
+          margin="normal"
+          type={isPasswordVisible ? "text" : "password"}
+          autoComplete="current-password"
+          InputProps={{ // <-- This is where the toggle button is added.
+            endAdornment: (
+              <InputAdornment position="end" >
+                <IconButton
+                  title={isPasswordVisible ? i18n('hidePassword') : i18n('showPassword')}
+                  aria-label={i18n('showHidePassword')}
+                  onMouseDown={(event) => {
+                    event.preventDefault();
+                    setPasswordVisibility((currentPasswodVisibility) => !currentPasswodVisibility);
+                  }}
+                >
+                  {<Icon
+                    className={`${isPasswordInputFocused ? 'text-primary' : 'text-foreground/45'}`}
+                    icon={isPasswordVisible ? "material-symbols:visibility-off-outline" : "material-symbols:visibility-outline"}
+                  />}
+                </IconButton>
+              </InputAdornment>
+            )
+          }}
+          onFocus={() => setPasswordInputFocus(true)}
+          onBlur={() => setPasswordInputFocus(false)}
+          onChange={(event) => setPassword(event.target.value)}
+        />
+        <FormControlLabel
+          control={<Checkbox value="remember" color="primary" name="rememberMe"/>}
+          label={i18n('rememberMe')}
+        />
+        { errorMessage && 
+          <div className="flex flex-row items-center mt-4">
+            <Icon icon="mdi:info-outline" width={18} className="mr-1 text-red-600"/>
+            <Typography variant="body1" className="text-red-600">{errorMessage}</Typography>
+          </div>
+        }
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          color="primary"
+          className="mt-6 mb-4"
+          disabled={password.length < 8 || !(/^\S+@\S+$/.test(email))}
+        >
+          {i18n('title')}
+        </Button>
+        <Grid container>
+          <Grid item xs>
+            <Link href="#" variant="body2">
+              {i18n('forgotPassword')}
+            </Link>
+          </Grid>
+          <Grid item>
+            <Link href="#" variant="body2">
+              {i18n('signUp')}
+            </Link>
+          </Grid>
         </Grid>
-        <Grid item>
-          <Link href="#" variant="body2">
-            {i18n('signUp')}
-          </Link>
-        </Grid>
-      </Grid>
-    </Box>
+      </Box>
+    </Suspense>
   );
 }
 
