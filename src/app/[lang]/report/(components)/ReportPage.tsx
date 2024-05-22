@@ -2,14 +2,12 @@
 import { Suspense, useEffect, useState } from 'react';
 import { useRouter, useSearchParams, useParams } from 'next/navigation';
 import { Scrollbars } from 'react-custom-scrollbars-2';
-
 import { CopyrightText } from '@/components/CopyrightText';
 import { ReportData } from '@/typing/types';
-
 import { dummyReportData } from '@/utils/data';
-import { SuppliersList } from './(components)/SuppliersList';
-import { OrderDetails } from './(components)/OrderDetails';
-import { ReportNavbar } from './(components)/ReportNavbar';
+import { SuppliersList } from './SuppliersList';
+import { ReportNavbar } from './ReportNavbar';
+import { OrderDetails } from './OrderDetails';
 
 export default function ReportPage() {
   const searchParams = useSearchParams();

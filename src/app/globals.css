@@ -6,19 +6,10 @@ body {
   @apply text-foreground bg-white m-0 box-border;
 }
 
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
 ::-webkit-scrollbar {
-  right: 0;
-  width: 6px;
-  height: 6px;
+    @apply bg-stone-700 w-[8px] h-[8px];
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-black/25;
-  border-radius: 12px;
-  width: 12px;
-  height: 12px;
+    @apply bg-stone-500 rounded hover:bg-stone-400;
 }

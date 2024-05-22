@@ -1,0 +1,216 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
+import { Grid, Typography, Tooltip, useMediaQuery } from '@mui/material';
+import { Icon } from '@iconify/react';
+import { useParams } from 'next/navigation';
+import { theme } from '@/config/mui-theme';
+import { formatISODate } from '@/utils/functions';
+import { ListRow } from '@/components/ListRow';
+import { ListRowHeader } from '@/components/ListRowHeader';
+import { ProtocolData } from '@/typing/types';
+
+interface ProtocolTabProps {
+  id?: string;
+  lastUpdate: string;
+  protocolData: ProtocolData[];
+}
+
+export function ProtocolTab(props: ProtocolTabProps) {
+  const { id, lastUpdate, protocolData } = props;
+
+  const i18n = useTranslations('reportPage.labels.reportsPanel');
+  const lang = useParams().lang as string;
+  const isSmall = useMediaQuery(theme.breakpoints.down('md'));
+
+  return (
+    <section id={id}>
+      {!isSmall && (
+        <ListRowHeader>
+          <Grid
+            item
+            xs={1}
+            lg={1}
+            className="px-2 flex flex-col justify-center"
+          >
+            <Typography
+              variant="body2"
+              className="font-bold break-words hyphens-auto"
+              component="label"
+            >
+              {i18n('status')}
+            </Typography>
+          </Grid>
+          <Grid item xs={2} className="px-2 flex flex-col justify-center">
+            <Typography
+              variant="body2"
+              className="font-bold break-words hyphens-auto"
+              component="label"
+            >
+              {i18n('name')}
+            </Typography>
+          </Grid>
+          <Grid item xs={2} className="px-2 flex flex-col justify-center">
+            <Typography
+              variant="body2"
+              className="font-bold break-words hyphens-auto"
+              component="label"
+            >
+              {i18n('institution')}
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            xs={6}
+            lg={7}
+            className="px-2 flex flex-col justify-center"
+          >
+            <Typography
+              variant="body2"
+              className="font-bold break-words hyphens-auto"
+              component="label"
+            >
+              {i18n('details')}
+            </Typography>
+          </Grid>
+        </ListRowHeader>
+      )}
+      {protocolData.map(item => (
+        <ListRow key={item.type} component="article">
+          <Grid container rowSpacing={2}>
+            <Grid
+              item
+              xs={3}
+              sm={2}
+              md={1}
+              order={{ xs: 3, md: 1 }}
+              className="px-4 md:px-2 flex flex-col md:justify-center"
+            >
+              {isSmall && (
+                <Typography
+                  variant="caption"
+                  className="font-bold"
+                  component="label"
+                >
+                  {i18n('status')}
+                </Typography>
+              )}
+              <Tooltip
+                title={i18n(
+                  item.status === 'NO_ALERT' ? 'statusUnlocked' : 'statusLocked'
+                )}
+              >
+                <Icon
+                  icon={
+                    item.status === 'NO_ALERT'
+                      ? 'ph:seal-check-fill'
+                      : 'ph:seal-warning-fill'
+                  }
+                  className={
+                    item.status === 'NO_ALERT'
+                      ? 'text-emerald-600'
+                      : 'text-red-600'
+                  }
+                  width={22}
+                  aria-label={i18n(
+                    item.status === 'NO_ALERT'
+                      ? 'statusUnlocked'
+                      : 'statusLocked'
+                  )}
+                />
+              </Tooltip>
+            </Grid>
+            <Grid
+              item
+              xs={5}
+              md={2}
+              order={{ xs: 1, md: 2 }}
+              className="px-4 md:px-2 flex flex-col md:justify-center"
+            >
+              {isSmall && (
+                <Typography
+                  variant="caption"
+                  className="font-bold"
+                  component="label"
+                >
+                  {i18n('name')}
+                </Typography>
+              )}
+              <Typography variant="body2" className="break-words hyphens-auto">
+                {i18n(`protocolItems.${item.type}.name`)}
+              </Typography>
+            </Grid>
+            <Grid
+              item
+              xs={4}
+              sm={5}
+              md={2}
+              order={{ xs: 2, md: 3 }}
+              className="px-4 md:px-2 flex flex-col md:justify-center"
+            >
+              {isSmall && (
+                <Typography
+                  variant="caption"
+                  className="font-bold"
+                  component="label"
+                >
+                  {i18n('institution')}
+                </Typography>
+              )}
+              <Typography variant="body2" className="break-words hyphens-auto">
+                {i18n(`protocolItems.${item.type}.institution`)}
+              </Typography>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              lg={7}
+              order={{ xs: 4, md: 4 }}
+              className="px-4 md:px-2 pb-2 md:pb-0 flex flex-col md:justify-center"
+            >
+              {isSmall && (
+                <Typography
+                  variant="caption"
+                  className="font-bold"
+                  component="label"
+                >
+                  {i18n('details')}
+                </Typography>
+              )}
+              <Typography variant="body2">
+                {lang === 'pt'
+                  ? item.details
+                  : i18n(
+                      `protocolItems.${item.type}.${
+                        item.status === 'NO_ALERT'
+                          ? 'unlockedDetails'
+                          : 'lockedDetails'
+                      }`
+                    ) +
+                    `${
+                      item.status !== 'NO_ALERT'
+                        ? `\nOriginal Details: "${item.details}"`
+                        : ''
+                    }`}
+              </Typography>
+            </Grid>
+          </Grid>
+        </ListRow>
+      ))}
+      <div className="flex flex-row items-center justify-between py-3 px-4">
+        <Typography variant="body2" className="mr-2">
+          {i18n('lastUpdate')}:
+        </Typography>
+        <span className="flex flex-row items-center">
+          <Icon
+            icon="mdi:clock-outline"
+            className="mr-[3px] mb-[1px]"
+            width={15}
+          />
+          <Typography variant="body2">{formatISODate(lastUpdate)}</Typography>
+        </span>
+      </div>
+    </section>
+  );
+}
