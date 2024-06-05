@@ -6,6 +6,7 @@ import { InView, useInView } from 'react-intersection-observer';
 import { theme } from '@/config/mui-theme';
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { LoginForm } from './LoginForm';
+import { basePath } from '@/utils/constants';
 
 export function LoginAside() {
   const isMedium = useMediaQuery(theme.breakpoints.down('lg'));
@@ -50,7 +51,7 @@ export function LoginAside() {
             <Image
               width={100}
               height={65}
-              src="/logo.svg"
+              src={`${basePath}/logo.svg`}
               alt="Logo"
               className="inline w-auto h-[80px] mt-8"
               priority={true}

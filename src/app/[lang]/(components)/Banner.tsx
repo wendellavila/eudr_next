@@ -14,7 +14,7 @@ import { Icon } from '@iconify/react';
 import { InView, useInView } from 'react-intersection-observer';
 import { theme } from '@/config/mui-theme';
 import { scrollToId } from '@/utils/functions';
-import { companyName } from '@/utils/constants';
+import { basePath, companyName } from '@/utils/constants';
 
 export function Banner() {
   const i18n = useTranslations('loginPage.labels.banner');
@@ -55,7 +55,7 @@ export function Banner() {
               <Image
                 width={100}
                 height={65}
-                src="/logo_dark.svg"
+                src={`${basePath}/logo_dark.svg`}
                 alt="Logo"
                 className="mt-3 w-auto h-[80px]"
                 priority={true}

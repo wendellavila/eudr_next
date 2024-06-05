@@ -5,6 +5,7 @@ import { Grid } from '@mui/material';
 import { dateToInt, getRandomInt } from '@/utils/functions';
 import { LoginAside } from './LoginAside';
 import { Banner } from './Banner';
+import { basePath } from '@/utils/constants';
 
 export function FrontSection() {
   return (
@@ -16,7 +17,7 @@ export function FrontSection() {
       bg-center bg-no-repeat bg-tertiary grow relative"
     >
       <Image
-        src={`/cafe-${getRandomInt(0, 9, dateToInt())}.jpg`}
+        src={`${basePath}/cafe-${getRandomInt(0, 9, dateToInt())}.jpg`}
         alt="Logo"
         fill={true}
         sizes="100vw"

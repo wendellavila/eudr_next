@@ -13,6 +13,7 @@ import {
 } from '@mui/material';
 import { Icon } from '@iconify/react';
 import { SetState } from '@/typing/types';
+import { basePath } from '@/utils/constants';
 
 interface ChangePasswordModalProps {
   isPasswordModalOpen: boolean;
@@ -57,7 +58,7 @@ export function ChangePasswordModal(props: ChangePasswordModalProps) {
           <Image
             width={66}
             height={43}
-            src="/logo.svg"
+            src={`${basePath}/logo.svg`}
             alt="Logo"
             className="inline w-auto h-[60px] my-4"
             priority={true}

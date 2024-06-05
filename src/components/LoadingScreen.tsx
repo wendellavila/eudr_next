@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
+import { basePath } from '@/utils/constants';
 
 export function LoadingScreen(props: { id?: string }) {
   const { id } = props;
@@ -15,7 +16,7 @@ export function LoadingScreen(props: { id?: string }) {
       <Image
         width={100}
         height={65}
-        src="/logo.svg"
+        src={`${basePath}/logo.svg`}
         alt="Logo"
         className="mb-10 w-auto h-[100px]"
         priority={true}

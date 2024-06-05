@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { Card, IconButton, Typography } from '@mui/material';
 import { Icon } from '@iconify/react';
 import { SetState, I18n } from '@/typing/types';
+import { basePath } from '@/utils/constants';
 
 interface NavbarProps {
   titleAppend?: string | undefined;
@@ -42,7 +43,7 @@ export function Navbar(props: NavbarProps) {
       <Image
         width={66}
         height={43}
-        src="/logo.svg"
+        src={`${basePath}/logo.svg`}
         alt="Logo"
         className="inline w-auto h-[30px]"
         priority={true}
