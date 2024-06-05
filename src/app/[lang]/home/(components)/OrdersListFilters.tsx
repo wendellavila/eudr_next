@@ -16,7 +16,7 @@ import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs, { Dayjs } from 'dayjs';
 import { Icon } from '@iconify/react';
-import { enUS, ptBR } from '@mui/x-date-pickers';
+import { enUS, ptBR } from '@mui/x-date-pickers/locales';
 import { getDayjsLocalization } from '@/config/i18n';
 import { theme } from '@/config/mui-theme';
 import { SetState } from '@/typing/types';
