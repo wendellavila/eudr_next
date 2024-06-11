@@ -1,6 +1,6 @@
 'use client';
 import { Typography } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 
 interface ListRowErrorMessageProps {
   id?: string;
@@ -14,7 +14,7 @@ export function ListRowErrorMessage(props: ListRowErrorMessageProps) {
 
   return (
     <article id={id} className="py-2 flex flex-row items-center justify-center">
-      <Icon icon="mdi:info-outline" className={`mr-1 ${color}`} />
+      <Iconify icon="mdi:info-outline" className={`mr-1 ${color}`} />
       <Typography variant="body2" className={color}>
         {message}
       </Typography>

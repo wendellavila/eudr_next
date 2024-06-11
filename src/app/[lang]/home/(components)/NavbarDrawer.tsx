@@ -11,7 +11,7 @@ import {
   ListItemButton,
   Typography,
 } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { SetState } from '@/typing/types';
 import { ChangePasswordModal } from './ChangePasswordModal';
@@ -74,13 +74,17 @@ export function NavbarDrawer(props: NavbarDrawerProps) {
           <nav className="flex flex-col justify-center mt-4">
             <ListItem className="p-0" onClick={handlePasswordChange}>
               <ListItemButton className="py-4 px-6 flex flex-row justify-center">
-                <Icon icon="mdi:password-outline" width={20} className="mr-2" />
+                <Iconify
+                  icon="mdi:password-outline"
+                  width={20}
+                  className="mr-2"
+                />
                 {i18n('changePassword')}
               </ListItemButton>
             </ListItem>
             <ListItem className="p-0" onClick={handleLogout}>
               <ListItemButton className="py-4 px-6 flex flex-row justify-center">
-                <Icon
+                <Iconify
                   icon="material-symbols:exit-to-app"
                   width={20}
                   className="mr-2"

@@ -10,7 +10,7 @@ import {
   Typography,
   useMediaQuery,
 } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { InView, useInView } from 'react-intersection-observer';
 import { theme } from '@/config/mui-theme';
 import { scrollToId } from '@/utils/functions';
@@ -78,7 +78,7 @@ export function Banner() {
                 },
               }}
             >
-              <Icon icon="fluent:leaf-two-16-regular" width={22} />
+              <Iconify icon="fluent:leaf-two-16-regular" width={22} />
             </Divider>
             <Typography component="p" variant="h6">
               {companyName.toLocaleUpperCase()}
@@ -97,7 +97,7 @@ export function Banner() {
           >
             <Grid container rowGap={6} className="px-2 py-8">
               <Grid component="article" item xs={12} sm={6} className="px-10">
-                <Icon
+                <Iconify
                   icon="healthicons:agriculture-outline"
                   width={60}
                   className="border-solid border-3 rounded-xl p-1 mb-4"
@@ -118,7 +118,7 @@ export function Banner() {
                 </Typography>
               </Grid>
               <Grid component="article" item xs={12} sm={6} className="px-10">
-                <Icon
+                <Iconify
                   icon="carbon:map-boundary-vegetation"
                   width={60}
                   className="border-solid border-3 rounded-xl p-1 mb-4"
@@ -151,7 +151,7 @@ export function Banner() {
               {i18n('learnMore').toUpperCase()}
             </div>
             <div className="animate-pulse xs:mb-4 lg:mb-0">
-              <Icon
+              <Iconify
                 icon="carbon:chevron-down"
                 width={40}
                 height={40}

@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Grid, Typography, Tooltip, useMediaQuery } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { useParams } from 'next/navigation';
 import { theme } from '@/config/mui-theme';
 import { formatISODate } from '@/utils/functions';
@@ -100,7 +100,7 @@ export function ProtocolTab(props: ProtocolTabProps) {
                   item.status === 'NO_ALERT' ? 'statusUnlocked' : 'statusLocked'
                 )}
               >
-                <Icon
+                <Iconify
                   icon={
                     item.status === 'NO_ALERT'
                       ? 'ph:seal-check-fill'
@@ -203,7 +203,7 @@ export function ProtocolTab(props: ProtocolTabProps) {
           {i18n('lastUpdate')}:
         </Typography>
         <span className="flex flex-row items-center">
-          <Icon
+          <Iconify
             icon="mdi:clock-outline"
             className="mr-[3px] mb-[1px]"
             width={15}

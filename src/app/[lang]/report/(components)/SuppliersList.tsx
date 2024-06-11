@@ -10,7 +10,7 @@ import {
   Tooltip,
   useMediaQuery,
 } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { theme } from '@/config/mui-theme';
 import { getSupplierStatus } from '@/utils/functions';
 import { CardHeader } from '@/components/CardHeader';
@@ -70,14 +70,14 @@ export function SuppliersList(props: ReportDataProps) {
       <Card className="max-w-[1200px] w-full">
         <CardHeader
           icon={
-            <Icon icon="ic:round-agriculture" width={31} className="mr-2" />
+            <Iconify icon="ic:round-agriculture" width={31} className="mr-2" />
           }
           title={i18n('suppliersList.title')}
           actions={
             reportData && (
               <Tooltip title={i18n('suppliersList.exportAllSuppliers')}>
                 <IconButton onClick={onMenuClick} className="px-0 py-1">
-                  <Icon icon="mdi:download" className="text-white" />
+                  <Iconify icon="mdi:download" className="text-white" />
                 </IconButton>
               </Tooltip>
             )

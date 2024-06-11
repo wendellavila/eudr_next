@@ -2,7 +2,7 @@
 import { useTranslations } from 'next-intl';
 import { Typography } from '@mui/material';
 import { GoogleMap, Polygon, useJsApiLoader } from '@react-google-maps/api';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { getMedianPoint, toLatLng } from '@/utils/functions';
 import { LoadingSection } from '@/components/LoadingSection';
 import { GeoJsonLngLat } from '@/typing/types';
@@ -30,7 +30,7 @@ export function MapViewer(props: MapViewerProps) {
   if (coordinates.length === 0) {
     return (
       <div className="p-4 flex flex-row items-center">
-        <Icon
+        <Iconify
           icon="mdi:info-outline"
           className="text-red-600 mr-2"
           width={18}

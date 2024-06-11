@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { InfoWindow, Marker } from '@react-google-maps/api';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { archivo, rubik } from '@/config/fonts';
 import { LatLng } from '@/typing/types';
 
@@ -53,7 +53,7 @@ export function MapMarker(props: MapMarkerProps) {
               {area}
             </div>
             <div className="mt-2 text-blue-600 flex flex-row items-center">
-              <Icon icon="mdi:map" width={15} className="mr-1"></Icon>
+              <Iconify icon="mdi:map" width={15} className="mr-1" />
               <a
                 target="_blank"
                 className={rubik.className}

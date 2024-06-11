@@ -11,7 +11,7 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { SetState } from '@/typing/types';
 import { basePath } from '@/utils/constants';
 
@@ -51,7 +51,7 @@ export function ChangePasswordModal(props: ChangePasswordModalProps) {
       <Card className="relative p-4 m-8 max-w-[500px] min-w-[450px]">
         <div className="absolute top-0 right-0 p-1">
           <IconButton onClick={handleClose}>
-            <Icon icon="mdi:close" width={24}></Icon>
+            <Iconify icon="mdi:close" width={24} />
           </IconButton>
         </div>
         <div className="flex flex-row justify-center">

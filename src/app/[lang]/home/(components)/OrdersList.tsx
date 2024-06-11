@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Card, Grid, Typography, Skeleton } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { formatDate } from '@/utils/functions';
 import { CardHeader } from '@/components/CardHeader';
 import { ListRow } from '@/components/ListRow';
@@ -57,7 +57,7 @@ export function OrdersList(props: OrdersListProps) {
     <Card component="section" id="orders-list">
       <CardHeader
         title={i18n('title')}
-        icon={<Icon icon="mingcute:ship-line" width={28} className="mr-2" />}
+        icon={<Iconify icon="mingcute:ship-line" width={28} className="mr-2" />}
       />
       <ListRowHeader>
         <Grid item xs={5} className="px-2 flex flex-col justify-center">

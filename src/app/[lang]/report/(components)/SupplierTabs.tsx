@@ -2,7 +2,7 @@
 import { useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Button, Card, Tabs, Tab } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { TabPanel } from '@/components/TabPanel';
 import { SupplierDataProps } from '@/typing/props';
 import { ProtocolTab } from './ProtocolTab';
@@ -96,7 +96,11 @@ export function SupplierTabs(props: SupplierTabsProps) {
           <Tab
             label={
               <div className="flex flex-row items-center">
-                <Icon icon="mingcute:leaf-fill" width={18} className="pr-1" />
+                <Iconify
+                  icon="mingcute:leaf-fill"
+                  width={18}
+                  className="pr-1"
+                />
                 {i18n('deforestationReports')}
               </div>
             }
@@ -105,7 +109,7 @@ export function SupplierTabs(props: SupplierTabsProps) {
           <Tab
             label={
               <div className="flex flex-row items-center">
-                <Icon icon="ph:map-pin-fill" width={18} className="pr-1" />
+                <Iconify icon="ph:map-pin-fill" width={18} className="pr-1" />
                 {i18n('geolocation')}
               </div>
             }
@@ -125,7 +129,7 @@ export function SupplierTabs(props: SupplierTabsProps) {
           color="buttonWhite"
           onClick={onExportReportsMenuClick}
         >
-          <Icon icon="mdi:download" width={18} className="mr-2" />
+          <Iconify icon="mdi:download" width={18} className="mr-2" />
           {i18n('exportReports')}
         </Button>
         <ExportFileMenu
@@ -144,7 +148,7 @@ export function SupplierTabs(props: SupplierTabsProps) {
           color="buttonWhite"
           onClick={onExportCoordinatesMenuClick}
         >
-          <Icon icon="mdi:download" width={18} className="mr-2" />
+          <Iconify icon="mdi:download" width={18} className="mr-2" />
           {i18n('exportCoordinates')}
         </Button>
         <ExportFileMenu

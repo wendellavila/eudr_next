@@ -15,7 +15,7 @@ import {
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs, { Dayjs } from 'dayjs';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { enUS, ptBR } from '@mui/x-date-pickers/locales';
 import { getDayjsLocalization } from '@/config/i18n';
 import { theme } from '@/config/mui-theme';
@@ -83,7 +83,7 @@ export function OrdersListFilters(props: OrdersListFiltersProps) {
           text-neutral-800 border-neutral-800`}
           onClick={() => setFiltersVisibility(visibility => !visibility)}
         >
-          <Icon icon="bi:filter" width={20} />
+          <Iconify icon="bi:filter" width={20} />
           <span className="ml-1">
             {i18n(filtersVisibility ? 'hideFilters' : 'showFilters')}
           </span>
@@ -111,7 +111,7 @@ export function OrdersListFilters(props: OrdersListFiltersProps) {
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
-                      <Icon icon="mdi:search" width={24} />
+                      <Iconify icon="mdi:search" width={24} />
                     </InputAdornment>
                   ),
                 }}

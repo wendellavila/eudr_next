@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Card, Grid, Typography, Tooltip } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { formatDate } from '@/utils/functions';
 import { CardHeader } from '@/components/CardHeader';
 import { SkeletonLoader } from '@/components/SkeletonLoader';
@@ -30,7 +30,7 @@ export function OrderDetails(props: ReportDataProps) {
         <CardHeader
           title={i18n('title')}
           icon={
-            <Icon
+            <Iconify
               icon="material-symbols:order-approve"
               width={28}
               className="mr-2"
@@ -116,7 +116,7 @@ export function OrderDetails(props: ReportDataProps) {
                       status === 'NO_ALERT' ? 'statusUnlocked' : 'statusLocked'
                     )}
                   >
-                    <Icon
+                    <Iconify
                       icon={
                         status === 'NO_ALERT'
                           ? 'ph:seal-check-fill'

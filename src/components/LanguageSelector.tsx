@@ -3,7 +3,7 @@
 import { useRouter, usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { MenuItem, Select, SelectChangeEvent } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 
 export function LanguageSelector() {
   const router = useRouter();
@@ -30,7 +30,7 @@ export function LanguageSelector() {
     >
       {languageItems.map((item, index) => (
         <MenuItem key={index} value={item.lang}>
-          <Icon icon={item.icon} width={20} className="mr-2" />
+          <Iconify icon={item.icon} width={20} className="mr-2" />
           {item.name}
         </MenuItem>
       ))}

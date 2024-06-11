@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Card, IconButton, Typography } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { SetState, I18n } from '@/typing/types';
 import { basePath } from '@/utils/constants';
 
@@ -34,7 +34,7 @@ export function Navbar(props: NavbarProps) {
           }
         }}
       >
-        <Icon icon={hasDrawer ? 'mdi:menu' : 'mdi:arrow-back'} width={22} />
+        <Iconify icon={hasDrawer ? 'mdi:menu' : 'mdi:arrow-back'} width={22} />
       </IconButton>
       {drawer}
       <Typography variant="h6" component="div" className="flex-grow">

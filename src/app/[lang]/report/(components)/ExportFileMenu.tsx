@@ -1,7 +1,7 @@
 'use client';
 
 import { Menu, MenuItem, Typography } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { useParams } from 'next/navigation';
 import { downloadGeoJSON, downloadExcel, downloadKML } from '@/utils/functions';
 
@@ -85,7 +85,7 @@ export function ExportFileMenu(props: ExportFileMenuProps) {
             className="flex flex-row justify-center w-full py-2"
             onClick={() => onMenuClose('excel')}
           >
-            <Icon icon="uiw:file-excel" className="mr-3" />
+            <Iconify icon="uiw:file-excel" className="mr-3" />
             Excel
           </MenuItem>
         )}
@@ -94,7 +94,7 @@ export function ExportFileMenu(props: ExportFileMenuProps) {
             className="flex flex-row justify-center w-full py-2"
             onClick={() => onMenuClose('geojson')}
           >
-            <Icon icon="mdi:json" className="mr-3" />
+            <Iconify icon="mdi:json" className="mr-3" />
             GeoJSON
           </MenuItem>
         )}
@@ -103,7 +103,7 @@ export function ExportFileMenu(props: ExportFileMenuProps) {
             className="flex flex-row justify-center w-full py-2"
             onClick={() => onMenuClose('kml')}
           >
-            <Icon icon="mdi:xml" className="mr-3" />
+            <Iconify icon="mdi:xml" className="mr-3" />
             KML
           </MenuItem>
         )}
@@ -112,7 +112,7 @@ export function ExportFileMenu(props: ExportFileMenuProps) {
             className="flex flex-row justify-center w-full py-2"
             onClick={() => onMenuClose('jpg')}
           >
-            <Icon icon="mdi:image-outline" className="mr-3" />
+            <Iconify icon="mdi:image-outline" className="mr-3" />
             Image
           </MenuItem>
         )}

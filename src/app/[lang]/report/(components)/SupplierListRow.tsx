@@ -2,7 +2,7 @@
 import { useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Grid, Typography, Tooltip } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { getSupplierStatus } from '@/utils/functions';
 import { ListRow } from '@/components/ListRow';
 import { SupplierDataProps } from '@/typing/props';
@@ -32,7 +32,7 @@ export function SupplierListRow(props: SupplierDataProps) {
               }`
             )}
           >
-            <Icon
+            <Iconify
               icon={
                 status === 'NO_ALERT'
                   ? 'ph:seal-check-fill'
@@ -64,7 +64,7 @@ export function SupplierListRow(props: SupplierDataProps) {
           className="px-2 flex flex-col justify-center items-end"
         >
           <Tooltip title={i18n(`suppliersList.${isOpen ? 'close' : 'expand'}`)}>
-            <Icon
+            <Iconify
               icon="mdi:chevron-down"
               width={30}
               className={`text-neutral-600 ${

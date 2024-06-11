@@ -14,7 +14,7 @@ import {
   Typography,
   InputAdornment,
 } from '@mui/material';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 
 export function LoginForm() {
   const router = useRouter();
@@ -111,7 +111,7 @@ export function LoginForm() {
                   }}
                 >
                   {
-                    <Icon
+                    <Iconify
                       className={`${
                         isPasswordInputFocused
                           ? 'text-primary'
@@ -140,7 +140,7 @@ export function LoginForm() {
         />
         {errorMessage && (
           <div className="flex flex-row items-center mt-4">
-            <Icon
+            <Iconify
               icon="mdi:info-outline"
               width={18}
               className="mr-1 text-red-600"

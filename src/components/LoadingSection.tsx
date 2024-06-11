@@ -1,6 +1,6 @@
 'use client';
 
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { ComponentProps } from '@/typing/props';
 
 export function LoadingSection(props: ComponentProps) {
@@ -9,7 +9,7 @@ export function LoadingSection(props: ComponentProps) {
     <div
       className={`h-[200px] flex flex-row items-center justify-center py-4 ${className}`}
     >
-      <Icon
+      <Iconify
         icon="svg-spinners:ring-resize"
         width={40}
         className="text-primary"

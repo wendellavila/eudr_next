@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Icon } from '@iconify/react';
+import { Iconify } from '@/components/Iconify';
 import { basePath } from '@/utils/constants';
 
 export function LoadingScreen(props: { id?: string }) {
@@ -21,7 +21,7 @@ export function LoadingScreen(props: { id?: string }) {
         className="mb-10 w-auto h-[100px]"
         priority={true}
       />
-      <Icon
+      <Iconify
         icon="svg-spinners:3-dots-fade"
         width={40}
         className="text-tertiary"
