@@ -1,19 +1,17 @@
 'use client';
-
-import { Scrollbars } from 'react-custom-scrollbars-2';
-
+import { useRef } from 'react';
 import { AboutSection } from './(components)/AboutSection';
 import { Footer } from './(components)/Footer';
 import { FrontSection } from './(components)/FrontSection';
 
 export default function LoginPage() {
+  const aboutRef = useRef<HTMLElement>(null);
+  const registerRef = useRef<HTMLElement>(null);
   return (
     <main>
-      <Scrollbars universal style={{ width: '100vw', height: '100vh' }}>
-        <FrontSection />
-        <AboutSection />
-        <Footer />
-      </Scrollbars>
+      <FrontSection aboutRef={aboutRef} registerRef={registerRef} />
+      <AboutSection aboutRef={aboutRef} registerRef={registerRef} />
+      <Footer />
     </main>
   );
 }

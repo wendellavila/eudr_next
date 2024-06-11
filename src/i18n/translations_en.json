@@ -1,4 +1,4 @@
-{   
+{
     "homePage": {
         "title": "EUDR Compliance Tracking",
         "description": "EUDR Compliance Tracking Platform",
@@ -57,7 +57,7 @@
                 "geopositioning": "Geopositioning",
                 "geopositioningDescription": "View the perimeter of supplying farms on a map and export coordinates to GeoJSON or KML"
             },
-            "login":{
+            "login": {
                 "title": "Log In",
                 "emailAddress": "Email Address",
                 "password": "Password",
@@ -67,7 +67,8 @@
                 "forgotPassword": "Forgot password?",
                 "signUp": "Don't have an account? Register",
                 "switchLanguage": "Switch Language",
-                "showHidePassword": "Show/Hide Password"
+                "showHidePassword": "Show/Hide Password",
+                "noScript": "You need to enable JavaScript on your browser to be able to log in."
             },
             "about": {
                 "title": "About the Platform",
@@ -91,7 +92,7 @@
         }
     },
     "reportPage": {
-        "title" : "EUDR Compliance Tracking",
+        "title": "EUDR Compliance Tracking",
         "description": "EUDR Compliance Tracking Platform",
         "labels": {
             "navbar": {
@@ -229,6 +230,13 @@
                 "statusUnlocked": "Unlocked",
                 "noOrderDetailsError": "Order details could not be loaded"
             }
+        }
+    },
+    "loadingScreen": {
+        "labels": {
+            "notRedirected": "Not redirected?",
+            "clickHere": "Click here",
+            "goToFrontPage": "to go to the front page."
         }
     }
 }

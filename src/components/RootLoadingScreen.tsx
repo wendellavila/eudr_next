@@ -2,18 +2,14 @@
 import Image from 'next/image';
 import { Iconify } from '@/components/Iconify';
 import { i18nConfig } from '@/config/i18n';
-import { useParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { deployPath, basePath } from '@/utils/constants';
-import { useTranslations } from 'next-intl';
 interface Props {
   id?: string;
 }
 
-export function LoadingScreen(props: Props) {
+export function RootLoadingScreen(props: Props) {
   const router = useRouter();
-  const lang = useParams().lang;
-
-  const i18n = useTranslations('loadingScreen.labels');
 
   const { id } = props;
 
@@ -25,7 +21,8 @@ export function LoadingScreen(props: Props) {
   return (
     <section
       id={id}
-      className="bg-white min-h-[100vh] flex flex-col items-center justify-center"
+      className="flex flex-col items-center justify-center
+      bg-white min-h-[100vh]"
     >
       <Image
         width={100}
@@ -41,15 +38,15 @@ export function LoadingScreen(props: Props) {
         className="text-tertiary"
       />
       <p className="text-sm absolute bottom-3 animate-fade animate-delay-1000">
-        {`${i18n('notRedirected')} `}
+        Not redirected?{` `}
         <a
-          href={`${deployPath}/${lang}/`}
+          href={`${deployPath}/en`}
           className="underline text-primary"
           onClick={handleClick}
         >
-          {i18n('clickHere')}
+          Click here
         </a>
-        {` ${i18n('goToFrontPage')}`}
+        {` `}to go to the front page.
       </p>
     </section>
   );

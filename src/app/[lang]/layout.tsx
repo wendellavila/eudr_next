@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from 'next-intl';
 
 import { archivo } from '@/config/fonts';
 import { getTranslationMessages } from '@/utils/functions';
-import { ClientProviderLoader } from './client-providers';
+import { ClientProviderLoader } from './(components)/ClientProviderLoader';
 export { generateStaticParams, generateMetadata } from '@/utils/functions';
 
 export default async function InternationalizedLayout({

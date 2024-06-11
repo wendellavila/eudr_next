@@ -3,7 +3,6 @@ import { Suspense, useEffect, useState } from 'react';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import {
-  Box,
   Button,
   Checkbox,
   FormControlLabel,
@@ -15,8 +14,9 @@ import {
   InputAdornment,
 } from '@mui/material';
 import { Iconify } from '@/components/Iconify';
+import { BannerScrollProps } from '@/typing/props';
 
-export function LoginForm() {
+function Form(props: BannerScrollProps) {
   const router = useRouter();
   const lang = useParams().lang;
   const i18n = useTranslations('loginPage.labels.login');
@@ -67,7 +67,7 @@ export function LoginForm() {
 
   return (
     <Suspense>
-      <Box component="form" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <Typography component="h2" variant="h5" className="text-center">
           {i18n('title')}
         </Typography>
@@ -167,12 +167,43 @@ export function LoginForm() {
             </Link>
           </Grid>
           <Grid item>
-            <Link href="#" variant="body2">
-              {i18n('signUp')}
+            <Link
+              href="#about-register"
+              onClick={event => {
+                event.preventDefault();
+                props.registerRef.current?.scrollIntoView({
+                  behavior: 'smooth',
+                });
+              }}
+              className="text-primary"
+            >
+              <Typography variant="body2">{i18n('signUp')}</Typography>
             </Link>
           </Grid>
         </Grid>
-      </Box>
+      </form>
     </Suspense>
+  );
+}
+
+export function LoginForm(props: BannerScrollProps) {
+  const i18n = useTranslations('loginPage.labels.login');
+  const [hasScript, setScript] = useState<boolean | undefined>(false);
+
+  useEffect(() => setScript(true), []);
+
+  return hasScript ? (
+    // Suspense is required when using useSearchParams
+    <Suspense fallback={<></>}>
+      <Form {...props} />
+    </Suspense>
+  ) : (
+    <p
+      className="flex flex-row flex-wrap gap-y-2 justify-center
+      text-center text-red-600 animate-fade animate-delay-1000"
+    >
+      <Iconify icon="mdi:info-outline" width={18} className="mr-0.5"></Iconify>
+      {i18n('noScript')}
+    </p>
   );
 }

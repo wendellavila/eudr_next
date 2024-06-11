@@ -1,17 +1,20 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { Fade, Slide, Typography } from '@mui/material';
-import { InView, useInView } from 'react-intersection-observer';
-import { SourcesGallery } from '../SourcesGallery';
+import { BannerScrollProps } from '@/typing/props';
+import { SourcesGallery } from './SourcesGallery';
+import { useInView } from '@/utils/hooks';
 
-export function AboutSection() {
+export function AboutSection(props: BannerScrollProps) {
+  const { aboutRef, registerRef } = props;
   const i18n = useTranslations('loginPage.labels.about');
 
-  const [viewCount, setViewCount] = useState<number>(0);
-  const { ref, inView, entry } = useInView({
-    threshold: 0,
-  });
+  const [animate, setAnimate] = useState(false);
+  const inView = useInView(aboutRef, 80);
+
+  useEffect(() => {
+    if (inView && !animate) setAnimate(true);
+  }, [animate, inView]);
 
   const deforestationDetails = i18n('deforestation.details').split('\n');
   const eudrDetails = i18n('eudr.details').split('\n');
@@ -19,155 +22,88 @@ export function AboutSection() {
 
   return (
     <section
+      ref={aboutRef}
       id="about"
       className="bg-secondary text-primaryDark pattern-autumn-orange-500/5
       overflow-hidden p-14 xs:p-8"
     >
-      <InView
-        onChange={(inView, _) => {
-          if (inView) {
-            setViewCount(viewCount + 1);
-          }
-        }}
+      <h2
+        className={`text-5xl text-center font-bold mb-10 mt-16 break-words hyphens-auto
+        ${animate ? 'animate-fade-down' : ''}`}
       >
-        <Slide direction="down" in={viewCount > 0} appear={false} timeout={600}>
-          <Typography
-            component="h2"
-            variant="h3"
-            className="text-center font-bold mb-10 mt-16 break-words hyphens-auto"
-          >
-            {i18n('title').toLocaleUpperCase()}
-          </Typography>
-        </Slide>
-        <div
-          ref={ref}
-          className="max-w-[1000px] m-auto flex flex-col gap-12 justify-center md:p-12 sm:p-4 mb-8"
+        {i18n('title').toLocaleUpperCase()}
+      </h2>
+      <div className="max-w-[1000px] m-auto flex flex-col gap-12 justify-center md:p-12 sm:p-4 mb-8">
+        <article
+          id="about-eudr"
+          className={animate ? 'animate-fade-right animate-delay-[300ms]' : ''}
         >
-          <Slide
-            direction="right"
-            in={viewCount > 0}
-            appear={false}
-            timeout={800}
-          >
-            <article>
-              <Typography
-                component="h3"
-                variant="h5"
-                className="mb-2 font-bold"
-              >
-                {i18n('eudr.title')}
-              </Typography>
-              {eudrDetails.map((paragraph, index) => (
-                <Typography
-                  key={index}
-                  variant="body1"
-                  className="text-justify mb-3"
-                >
-                  {paragraph}
-                </Typography>
-              ))}
-            </article>
-          </Slide>
-          <article>
-            <Slide
-              direction="left"
-              in={viewCount > 0}
-              appear={false}
-              timeout={800}
+          <h3 className="text-2xl mt-0 mb-2 font-bold">{i18n('eudr.title')}</h3>
+          {eudrDetails.map((paragraph, index) => (
+            <p
+              key={`eudr-paragraph-${index}`}
+              className="text-justify mb-3 leading-normal"
             >
-              <div>
-                <Typography
-                  component="h3"
-                  variant="h5"
-                  className="mb-2 font-bold"
-                >
-                  {i18n('deforestation.title')}
-                </Typography>
-                <Typography
-                  variant="body1"
-                  component="p"
-                  className="text-justify mb-3"
-                >
-                  {deforestationDetails[0]}
-                </Typography>
-              </div>
-            </Slide>
-            <Fade in={viewCount > 0} appear={false} timeout={1800}>
-              <div>
-                <SourcesGallery />
-              </div>
-            </Fade>
-            <Slide
-              direction="left"
-              in={viewCount > 0}
-              appear={false}
-              timeout={800}
+              {paragraph}
+            </p>
+          ))}
+        </article>
+        <article id="about-deforestation">
+          <div
+            className={animate ? 'animate-fade-left animate-delay-[300ms]' : ''}
+          >
+            <h3 className="text-2xl mt-0 mb-2 font-bold">
+              {i18n('deforestation.title')}
+            </h3>
+            <p className="text-justify mb-3 leading-normal">
+              {deforestationDetails[0]}
+            </p>
+          </div>
+          <div className={animate ? 'animate-fade' : ''}>
+            <SourcesGallery />
+          </div>
+          <div
+            className={animate ? 'animate-fade-left animate-delay-[300ms]' : ''}
+          >
+            {deforestationDetails.slice(1).map((paragraph, index) => (
+              <p
+                key={`deforestation-paragraph-${index}`}
+                className="text-justify mb-3 leading-normal"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </article>
+        <article
+          id="about-platform"
+          className={animate ? 'animate-fade-right animate-delay-[300ms]' : ''}
+        >
+          <h3 className="text-2xl mt-0 mb-2 font-bold">
+            {i18n('platform.title')}
+          </h3>
+          {platformDetails.map((paragraph, index) => (
+            <p
+              key={`platform-paragraph-${index}`}
+              className="text-justify mb-3 leading-normal"
             >
-              <div>
-                {deforestationDetails.slice(1).map((paragraph, index) => (
-                  <Typography
-                    key={index}
-                    component="p"
-                    variant="body1"
-                    className="text-justify mb-3"
-                  >
-                    {paragraph}
-                  </Typography>
-                ))}
-              </div>
-            </Slide>
-          </article>
-          <Slide
-            direction="right"
-            in={viewCount > 0}
-            appear={false}
-            timeout={800}
-          >
-            <article>
-              <Typography
-                component="h3"
-                variant="h5"
-                className="mb-2 font-bold"
-              >
-                {i18n('platform.title')}
-              </Typography>
-              {platformDetails.map((paragraph, index) => (
-                <Typography
-                  key={index}
-                  component="p"
-                  variant="body1"
-                  className="text-justify mb-3"
-                >
-                  {paragraph}
-                </Typography>
-              ))}
-            </article>
-          </Slide>
-          <Slide
-            direction="left"
-            in={viewCount > 0}
-            appear={false}
-            timeout={800}
-          >
-            <article>
-              <Typography
-                component="h3"
-                variant="h5"
-                className="mb-2 font-bold"
-              >
-                {i18n('access.title')}
-              </Typography>
-              <Typography
-                component="p"
-                variant="body1"
-                className="text-justify"
-              >
-                {i18n('access.details')}
-              </Typography>
-            </article>
-          </Slide>
-        </div>
-      </InView>
+              {paragraph}
+            </p>
+          ))}
+        </article>
+        <article
+          id="about-register"
+          ref={registerRef}
+          className={animate ? 'animate-fade-left animate-delay-[300ms]' : ''}
+        >
+          <h3 className="text-2xl mt-0 mb-2 font-bold">
+            {i18n('access.title')}
+          </h3>
+          <p className="text-justify leading-normal">
+            {i18n('access.details')}
+          </p>
+        </article>
+      </div>
     </section>
   );
 }

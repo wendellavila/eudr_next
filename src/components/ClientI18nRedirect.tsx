@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { i18nConfig } from '@/config/i18n';
 import { getBrowserPreferredLanguage } from '@/utils/functions';
-import { LoadingScreen } from './LoadingScreen';
+import { RootLoadingScreen } from './RootLoadingScreen';
 
 export function ClientI18nRedirect() {
   const [locale, setLocale] = useState<string>('');
@@ -24,7 +24,7 @@ export function ClientI18nRedirect() {
 
   return (
     <main>
-      <LoadingScreen id="locale-loading" />
+      <RootLoadingScreen id="locale-loading" />
     </main>
   );
 }

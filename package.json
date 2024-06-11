@@ -28,7 +28,7 @@
     "react-component-export-image": "^1.0.6",
     "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "^18.2.0",
-    "react-intersection-observer": "^9.8.2",
+    "tailwindcss-animated": "^1.1.0",
     "tailwindcss-patterns": "^0.1.2"
   },
   "devDependencies": {

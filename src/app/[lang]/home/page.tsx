@@ -1,8 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { Scrollbars } from 'react-custom-scrollbars-2';
-
 import { LoadingScreen } from '@/components/LoadingScreen';
 import { CopyrightText } from '@/components/CopyrightText';
 import { Orders } from './(components)/Orders';
@@ -28,14 +26,12 @@ export default function HomePage() {
     <div className="flex flex-col h-[100vh] bg-surface">
       <HomeNavbar customerName={customerName} />
       <main className="grow">
-        <Scrollbars universal>
-          <div className="flex flex-col h-full">
-            <div className="grow">
-              <Orders />
-            </div>
-            <CopyrightText className="mt-4 mb-2" />
+        <div className="flex flex-col h-full">
+          <div className="grow">
+            <Orders />
           </div>
-        </Scrollbars>
+          <CopyrightText className="mt-4 mb-2" />
+        </div>
       </main>
     </div>
   ) : (

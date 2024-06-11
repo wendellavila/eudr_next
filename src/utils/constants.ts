@@ -1,9 +1,10 @@
 import { SourcesData } from '@/typing/types';
-
 export const companyName = 'Company Name';
 
 const isProduction = process.env.NODE_ENV === 'production';
 export const basePath = isProduction ? '/projects/eudr_next' : '';
+const deployUrl = isProduction ? 'https://wendellavila.github.io' : '';
+export const deployPath = isProduction ? `${deployUrl}${basePath}` : '';
 
 export const sourcesData: SourcesData = {
   UNIDADES_CONSERVACAO: {

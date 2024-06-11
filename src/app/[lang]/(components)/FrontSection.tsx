@@ -6,8 +6,9 @@ import { dateToInt, getRandomInt } from '@/utils/functions';
 import { LoginAside } from './LoginAside';
 import { Banner } from './Banner';
 import { basePath } from '@/utils/constants';
+import { BannerScrollProps } from '@/typing/props';
 
-export function FrontSection() {
+export function FrontSection(props: BannerScrollProps) {
   return (
     <Grid
       container
@@ -24,8 +25,8 @@ export function FrontSection() {
         className="object-cover"
       />
       <div className="bg-black/40 w-full h-full absolute top-0 left-0"></div>
-      <Banner />
-      <LoginAside />
+      <Banner {...props} />
+      <LoginAside {...props} />
     </Grid>
   );
 }

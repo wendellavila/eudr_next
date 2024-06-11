@@ -67,7 +67,8 @@
                 "forgotPassword": "Recuperar senha",
                 "signUp": "Não tem uma conta? Registrar",
                 "switchLanguage": "Alterar Idioma",
-                "showHidePassword": "Exibir/Esconder Senha"
+                "showHidePassword": "Exibir/Esconder Senha",
+                "noScript": "Você precisa habilitar o JavaScript no seu navegador para entrar na plataforma."
             },
             "about": {
                 "title": "Sobre o Portal",
@@ -75,11 +76,11 @@
                     "title": "O que é EUDR?",
                     "details": "O Regulamento da União Europeia para Produtos Livres de Desmatamento (EUDR) é uma legislação que visa minimizar a contribuição da União Europeia para o desmatamento global e a degradação florestal, bem como para as emissões de gases de efeito estufa e a perda de biodiversidade.\nO EUDR faz parte do European Green Deal, uma estratégia que visa tornar a Europa neutra em emissões de gases de efeito estufa até 2050. O regulamento incide sobre madeira, soja, carne bovina, cacau, café, óleo de palma, borracha e derivados.\nOs operadores e comerciantes no Brasil (e a nível global) devem cumprir o EUDR até o final de 2024 ao exportarem certas commodities à UE. A lei proíbe a importação de produtos provenientes de áreas com qualquer nível de desmatamento identificado até dezembro de 2020."
                 },
-                "deforestation" : {
+                "deforestation": {
                     "title": "Como o desmatamento é monitorado?",
                     "details": "Para certificar que o nosso café é livre de desmatamento, recuperamos informações de 10 diferentes órgãos governamentais e ONGs que divulgam dados públicos sobre desmatamento. São eles:\nAlguns desses órgãos, como o PRODES e o MapBiomas, fazem monitoramento via satélite de regiões de floresta e publicam alertas de desmatamento periodicamente. Já órgãos como o IBAMA e o SEMA-MT publicam listas de infratores e áreas embargadas por desmatamento.\nA geolocalização das propriedades é recuperada junto ao SICAR – Sistema de Cadastro Ambiental Rural, e através dela é possível fazer um cruzamento entre os alertas e embargos de desmatamento e as propriedades fornecedoras de café.\nTendo esses dados, podemos garantir que o café exportado provém de uma propriedade rural sem desmatamento e pertencente a um proprietário sem embargos ambientais."
                 },
-                "platform" : {
+                "platform": {
                     "title": "Como funciona o portal?",
                     "details": "O portal de rastreamento de conformidade com a EUDR permite que nossos clientes tenham acesso aos laudos ambientais e à geolocalização das propriedades rurais que forneceram café para a composição de suas compras.\nPara cada uma de suas compras, o cliente tem acesso a uma listagem de todas as propriedades que forneceram café para a mesma. O portal lista a situação de cada propriedade, no momento em que foi embarcado o café, em cada um dos órgãos de monitoramento de desmatamento. Dessa forma, o cliente tem acesso transparente aos mesmos dados que utilizamos para certificar o café.\nAlém dos laudos ambientais, a localização das propriedades é exibida em um mapa interativo, também sendo possível exportar as coordenadas nos formatos GeoJSON e KML."
                 },
@@ -91,7 +92,7 @@
         }
     },
     "reportPage": {
-        "title" : "Rastreamento de Conformidade com a EUDR",
+        "title": "Rastreamento de Conformidade com a EUDR",
         "description": "Rastreamento de Conformidade com a EUDR",
         "labels": {
             "navbar": {
@@ -229,6 +230,13 @@
                 "statusUnlocked": "Desbloqueado",
                 "noOrderDetailsError": "Não foi possível carregar os detalhes do pedido"
             }
+        }
+    },
+    "loadingScreen": {
+        "labels": {
+            "notRedirected": "Não foi redirecionado?",
+            "clickHere": "Clique aqui",
+            "goToFrontPage": "para ir para a página inicial."
         }
     }
 }
