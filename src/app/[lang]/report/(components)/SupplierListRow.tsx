@@ -9,7 +9,7 @@ import { SupplierDataProps } from '@/typing/props';
 import { SupplierTabs } from './SupplierTabs';
 
 export function SupplierListRow(props: SupplierDataProps) {
-  const supplier = props.supplierData;
+  const { supplierData: supplier } = props;
   const [isOpen, setOpen] = useState<boolean>(false);
   const i18n = useTranslations('reportPage.labels');
   const status = getSupplierStatus(supplier);

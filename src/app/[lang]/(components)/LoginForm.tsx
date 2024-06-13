@@ -22,6 +22,8 @@ function Form(props: BannerScrollProps) {
   const i18n = useTranslations('loginPage.labels.login');
   const searchParams = useSearchParams();
 
+  const { registerRef } = props;
+
   const [errorMessage, setErrorMessage] = useState<string | undefined>(
     undefined
   );
@@ -51,7 +53,7 @@ function Form(props: BannerScrollProps) {
       } else {
         sessionStorage.setItem('token', token);
       }
-      router.replace(`/${lang}/home`);
+      router.replace(`/${lang}/orders`);
       if (newSearchParams) router.push(`/${lang}/report?${newSearchParams}`);
     } else {
       setErrorMessage('Invalid credentials.');
@@ -59,7 +61,7 @@ function Form(props: BannerScrollProps) {
   };
 
   useEffect(() => {
-    router.prefetch(`/${lang}/home`);
+    router.prefetch(`/${lang}/orders`);
     if (newSearchParams) {
       router.prefetch(`/${lang}/report?${newSearchParams}`);
     }
@@ -171,7 +173,7 @@ function Form(props: BannerScrollProps) {
               href="#about-register"
               onClick={event => {
                 event.preventDefault();
-                props.registerRef.current?.scrollIntoView({
+                registerRef.current?.scrollIntoView({
                   behavior: 'smooth',
                 });
               }}

@@ -35,7 +35,7 @@ export default function ReportPage() {
     }
 
     if (!oid) {
-      router.replace(`/${lang}/home`);
+      router.replace(`/${lang}/orders`);
     } else {
       /*
       (async () => {
@@ -47,7 +47,7 @@ export default function ReportPage() {
         }
         else if(response.status > 400 && response.status < 500){
           // If request is unauthorized or not found, go back to home
-          router.replace(`/${lang}/home`);
+          router.replace(`/${lang}/orders`);
         }
         else {
           // Show error message

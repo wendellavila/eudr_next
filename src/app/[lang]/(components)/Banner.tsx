@@ -15,6 +15,7 @@ export function Banner(props: BannerScrollProps) {
   const ref = useRef(null);
   const [animate, setAnimate] = useState(false);
   const inView = useInView(ref, 80);
+  const { aboutRef } = props;
 
   useEffect(() => {
     if (inView && !animate) setAnimate(true);
@@ -122,7 +123,7 @@ export function Banner(props: BannerScrollProps) {
               ${animate ? 'animate-fade-down animate-delay-[100ms]' : ''}`}
           onClick={event => {
             event.preventDefault();
-            props.aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
+            aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
           }}
         >
           <div className="mb-1 select-none">
