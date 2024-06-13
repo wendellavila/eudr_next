@@ -3,7 +3,14 @@ import { NextIntlClientProvider } from 'next-intl';
 import { archivo } from '@/config/fonts';
 import { getTranslationMessages } from '@/utils/functions';
 import { ClientProviderLoader } from './(components)/ClientProviderLoader';
-export { generateStaticParams, generateMetadata } from '@/utils/functions';
+import { i18nConfig } from '@/config/i18n';
+
+/**
+ * Generates Next.js SSG Static Params using the locales defined in i18nConfig.
+ */
+export async function generateStaticParams() {
+  return i18nConfig.locales.map(locale => ({ lang: locale }));
+}
 
 export default async function InternationalizedLayout({
   children,

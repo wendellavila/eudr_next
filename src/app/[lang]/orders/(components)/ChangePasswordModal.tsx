@@ -23,7 +23,7 @@ interface ChangePasswordModalProps {
 export function ChangePasswordModal(props: ChangePasswordModalProps) {
   const { isPasswordModalOpen, setPasswordModalOpen } = props;
 
-  const i18n = useTranslations('homePage.labels.changePasswordModal');
+  const i18n = useTranslations('ordersPage.labels.changePasswordModal');
 
   const [currentPassword, setCurrentPassword] = useState<string>('');
   const [newPassword, setNewPassword] = useState<string>('');

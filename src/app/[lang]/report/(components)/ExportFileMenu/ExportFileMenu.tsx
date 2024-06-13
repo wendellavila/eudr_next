@@ -1,11 +1,10 @@
 'use client';
-
 import { Menu, MenuItem, Typography } from '@mui/material';
 import { Iconify } from '@/components/Iconify';
 import { useParams } from 'next/navigation';
-import { downloadGeoJSON, downloadExcel, downloadKML } from '@/utils/functions';
-
 import { ReportData, SetState, SupplierData } from '@/typing/types';
+
+import { downloadExcel, downloadGeoJSON, downloadKML } from './functions';
 
 interface ExportFileMenuProps {
   data: ReportData | SupplierData;
@@ -23,15 +22,15 @@ interface ExportFileMenuProps {
 }
 
 export function ExportFileMenu(props: ExportFileMenuProps) {
+  const lang = useParams().lang as string;
   const {
     data,
-    formats,
     mapRef,
+    formats,
+    title,
     selectedExportOption,
     setSelectedExportOption,
-    title,
   } = props;
-  const lang = useParams().lang as string;
 
   let isoDate = props.isoDate;
   // data typeof ReportData

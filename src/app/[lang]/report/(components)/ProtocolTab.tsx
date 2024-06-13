@@ -5,10 +5,27 @@ import { Grid, Typography, Tooltip, useMediaQuery } from '@mui/material';
 import { Iconify } from '@/components/Iconify';
 import { useParams } from 'next/navigation';
 import { theme } from '@/config/mui-theme';
-import { formatISODate } from '@/utils/functions';
 import { ListRow } from '@/components/ListRow';
 import { ListRowHeader } from '@/components/ListRowHeader';
 import { ProtocolData } from '@/typing/types';
+import { zeroPad } from '@/utils/functions';
+/**
+ * Formats an ISO date string into dd/mm/yyyy hh:mm:ss
+ * @param {string} isoDate - An ISO 8601 date string.
+ */
+function formatISODate(isoDate: string) {
+  const date = new Date(isoDate);
+  if (isNaN(date.getDate())) return '';
+
+  const day = zeroPad(date.getDate());
+  const month = zeroPad(date.getMonth() + 1);
+  const year = date.getFullYear();
+  const hours = zeroPad(date.getHours());
+  const minutes = zeroPad(date.getMinutes());
+  const seconds = zeroPad(date.getSeconds());
+
+  return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+}
 
 interface ProtocolTabProps {
   id?: string;

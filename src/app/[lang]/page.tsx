@@ -1,17 +1,21 @@
-'use client';
-import { useRef } from 'react';
-import { AboutSection } from './(components)/AboutSection';
-import { Footer } from './(components)/Footer';
-import { FrontSection } from './(components)/FrontSection';
+import { ClientLoginPage } from './client';
+import { getTranslations } from '@/utils/functions';
+
+export async function generateMetadata({
+  params: { lang },
+}: {
+  params: { lang: string };
+}) {
+  const i18n = await getTranslations(lang, 'loginPage');
+  return {
+    title: i18n('title'),
+    description: i18n('description'),
+    icons: {
+      icon: `https://intranet.guaxupe.com.br/assets/img/ecgl/favicon.png`,
+    },
+  };
+}
 
 export default function LoginPage() {
-  const aboutRef = useRef<HTMLElement>(null);
-  const registerRef = useRef<HTMLElement>(null);
-  return (
-    <main>
-      <FrontSection aboutRef={aboutRef} registerRef={registerRef} />
-      <AboutSection aboutRef={aboutRef} registerRef={registerRef} />
-      <Footer />
-    </main>
-  );
+  return <ClientLoginPage />;
 }

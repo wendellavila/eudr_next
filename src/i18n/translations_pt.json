@@ -1,6 +1,10 @@
 {
-    "homePage": {
+    "metadata": {
         "title": "Rastreamento de Conformidade com a EUDR",
+        "description": "Rastreamento de Conformidade com a EUDR do café da Exportadora de Café Guaxupé Ltda."
+    },
+    "ordersPage": {
+        "title": "Rastreamento de Conformidade com a EUDR - Compras",
         "description": "Rastreamento de Conformidade com a EUDR",
         "labels": {
             "navbar": {
@@ -92,7 +96,7 @@
         }
     },
     "reportPage": {
-        "title": "Rastreamento de Conformidade com a EUDR",
+        "title": "Rastreamento de Conformidade com a EUDR - Relatório",
         "description": "Rastreamento de Conformidade com a EUDR",
         "labels": {
             "navbar": {

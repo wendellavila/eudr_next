@@ -26,7 +26,7 @@ interface NavbarDrawerProps {
 export function NavbarDrawer(props: NavbarDrawerProps) {
   const { customerName, isDrawerOpen, setDrawerOpen } = props;
 
-  const i18n = useTranslations('homePage.labels.drawer');
+  const i18n = useTranslations('ordersPage.labels.drawer');
   const router = useRouter();
   const lang = useParams().lang;
   const [isPasswordModalOpen, setPasswordModalOpen] = useState<boolean>(false);

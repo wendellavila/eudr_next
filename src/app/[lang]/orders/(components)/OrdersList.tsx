@@ -24,7 +24,7 @@ export function OrdersList(props: OrdersListProps) {
   const { ordersData, minDate, maxDate, minVolume, maxVolume, searchText } =
     props;
   const lang = useParams().lang as string;
-  const i18n = useTranslations('homePage.labels.orders');
+  const i18n = useTranslations('ordersPage.labels.orders');
 
   const filteredOrdersData = useMemo<OrderData[]>(
     () =>

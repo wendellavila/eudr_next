@@ -6,7 +6,7 @@ import { NavbarDrawer } from './NavbarDrawer';
 
 export function HomeNavbar(props: { customerName: string }) {
   const { customerName } = props;
-  const i18n = useTranslations('homePage.labels.navbar');
+  const i18n = useTranslations('ordersPage.labels.navbar');
   const [isDrawerOpen, setDrawerOpen] = useState<boolean>(false);
   return (
     <Navbar

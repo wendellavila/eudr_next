@@ -58,7 +58,7 @@ export function OrdersListFilters(props: OrdersListFiltersProps) {
   } = props;
   const isMedium = useMediaQuery(theme.breakpoints.down('lg'));
 
-  const i18n = useTranslations('homePage.labels.orders');
+  const i18n = useTranslations('ordersPage.labels.orders');
   const lang = useParams().lang as string;
   const [filtersVisibility, setFiltersVisibility] = useState(!isMedium);
 

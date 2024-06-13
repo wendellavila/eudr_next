@@ -1,6 +1,10 @@
 {
-    "homePage": {
+    "metadata": {
         "title": "EUDR Compliance Tracking",
+        "description": "Exportadora de Café Guaxupé Ltda.'s EUDR Compliance Tracking Platform"
+    },
+    "ordersPage": {
+        "title": "EUDR Compliance Tracking - Orders",
         "description": "EUDR Compliance Tracking Platform",
         "labels": {
             "navbar": {
@@ -92,7 +96,7 @@
         }
     },
     "reportPage": {
-        "title": "EUDR Compliance Tracking",
+        "title": "EUDR Compliance Tracking - Report",
         "description": "EUDR Compliance Tracking Platform",
         "labels": {
             "navbar": {
