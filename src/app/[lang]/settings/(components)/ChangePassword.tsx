@@ -17,7 +17,6 @@ import { Iconify } from '@/components/Iconify';
 
 import { isPasswordValid } from '@/utils/functions';
 import { ComponentProps, UserDataProps } from '@/typing/props';
-import { baseUrl } from '@/utils/constants';
 import { useTokenContext } from '@/context/TokenContext';
 
 interface Props extends UserDataProps, ComponentProps {}

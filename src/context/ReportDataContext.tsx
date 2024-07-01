@@ -21,7 +21,7 @@ function useReportData(token: string | null) {
     } else {
       setReportData(null);
     }
-  }, [token, setReportData]);
+  }, [token, setReportData, oid]);
 
   return userData;
 }

@@ -63,7 +63,7 @@ function useTokenReportPage() {
     } else if (!oid) {
       router.replace(`/${lang}/orders`);
     }
-  }, [lang, token, router]);
+  }, [lang, token, router, oid]);
   return token;
 }
 export function TokenProviderReportPage(props: ComponentProps) {

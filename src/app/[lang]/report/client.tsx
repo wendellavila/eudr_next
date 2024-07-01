@@ -29,7 +29,7 @@ export function ClientReportPage() {
           </UserDataProvider>
         </Suspense>
       );
-  }, [token]);
+  }, [token, oid]);
 
   return component;
 }

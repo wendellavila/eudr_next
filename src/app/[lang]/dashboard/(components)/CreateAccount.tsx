@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { CustomerData } from '@/typing/types';
-import { baseUrl } from '@/utils/constants';
 import { StatusMessage } from '@/components/StatusMessage';
 
 import {

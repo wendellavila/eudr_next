@@ -14,8 +14,6 @@ import {
 import { Iconify } from '@/components/Iconify';
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { SetState } from '@/typing/types';
-import { ChangePasswordModal } from './ChangePasswordModal';
-import { baseUrl } from '@/utils/constants';
 
 interface NavbarDrawerProps {
   customerName: string;
@@ -100,10 +98,6 @@ export function NavbarDrawer(props: NavbarDrawerProps) {
           </div>
         </List>
       </Drawer>
-      <ChangePasswordModal
-        isPasswordModalOpen={isPasswordModalOpen}
-        setPasswordModalOpen={setPasswordModalOpen}
-      />
     </>
   );
 }

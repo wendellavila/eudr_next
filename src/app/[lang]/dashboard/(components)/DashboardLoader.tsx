@@ -1,8 +1,6 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { baseUrl } from '@/utils/constants';
-import { UserData } from '@/typing/types';
 import Scrollbars from 'react-custom-scrollbars-2';
 import { DashboardNavbar } from './DashboardNavbar';
 import { CopyrightText } from '@/components/CopyrightText';
@@ -23,7 +21,7 @@ export function DashboardLoader() {
 
   useEffect(() => {
     if (token) router.prefetch(`/${lang}/orders`);
-  }, [token]);
+  }, [lang, router, token]);
 
   useEffect(() => {
     if (userData && userData.role !== 'admin') {
