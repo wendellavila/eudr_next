@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply text-foreground bg-white m-0 box-border;
-}
-
 ::-webkit-scrollbar {
     @apply bg-stone-700 w-[8px] h-[8px];
 }

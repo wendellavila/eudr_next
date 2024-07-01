@@ -1,5 +1,6 @@
 import { ClientOrdersPage } from './client';
 import { getTranslations } from '@/utils/functions';
+import { TokenProvider } from '@/context/TokenContext';
 
 export async function generateMetadata({
   params: { lang },
@@ -11,11 +12,15 @@ export async function generateMetadata({
     title: i18n('title'),
     description: i18n('description'),
     icons: {
-      icon: `https://intranet.guaxupe.com.br/assets/img/ecgl/favicon.png`,
+      icon: `/favicon.png`,
     },
   };
 }
 
 export default function OrdersPage() {
-  return <ClientOrdersPage />;
+  return (
+    <TokenProvider>
+      <ClientOrdersPage />
+    </TokenProvider>
+  );
 }

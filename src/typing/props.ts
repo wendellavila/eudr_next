@@ -1,4 +1,13 @@
 import { ReportData, SupplierData } from './types';
+import { UserData } from '@/typing/types';
+
+export interface UserDataProps {
+  userData?: UserData | null;
+}
+
+export interface TokenProps {
+  token: string;
+}
 
 export interface ReportDataProps {
   reportData?: ReportData | null;

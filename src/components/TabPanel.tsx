@@ -7,7 +7,7 @@ interface TabPanelProps {
 }
 
 export function TabPanel(props: TabPanelProps) {
-  const { index, children, value } = props;
+  const { value, index, children } = props;
   return (
     <div
       role="tabpanel"

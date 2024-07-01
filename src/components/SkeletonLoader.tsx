@@ -8,7 +8,7 @@ interface SkeletonLoaderProps extends ComponentProps {
 }
 
 export function SkeletonLoader(props: SkeletonLoaderProps) {
-  const { children, height, id, width } = props;
+  const { id, children, width, height } = props;
   return (
     <div id={id} className="pl-2 py-3">
       {children ? (

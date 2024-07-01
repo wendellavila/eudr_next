@@ -1,32 +1,35 @@
 'use client';
-
 import Link from 'next/link';
 import { ComponentProps } from '@/typing/props';
-import { SetState } from '@/typing/types';
+import { ComponentType, SetState } from '@/typing/types';
 
 interface ListRowLinkProps extends ComponentProps {
   href: string;
 }
 
-interface ListRowPanelProps extends ListRowNoActionProps {
+interface ListRowPanelProps extends ComponentProps {
   panel: React.ReactNode;
   isOpen: boolean;
   setPanelState: SetState<boolean>;
 }
 
-interface ListRowNoActionProps extends ComponentProps {
-  component?: 'div' | 'article' | 'section';
+interface ListRowComponentTypeProps extends ComponentProps {
+  component?: ComponentType;
 }
 
-type ListRowProps = ListRowNoActionProps | ListRowPanelProps | ListRowLinkProps;
+export type ListRowProps =
+  | ListRowComponentTypeProps
+  | ListRowPanelProps
+  | ListRowLinkProps;
 
 export function ListRow(props: ListRowProps) {
-  const { children, id } = props;
   const ComponentWrapper =
     'component' in props && props.component ? props.component : 'div';
   const hasPanel = 'panel' in props;
   const hasHref = 'href' in props;
   const hasAction = hasPanel || hasHref;
+
+  const { id, children } = props;
 
   let className = `py-2 flex flex-row border-neutral-200 border-b-[1px]
 	border-t-0 border-x-0 border-solid `;

@@ -27,6 +27,7 @@ import {
   headerFont,
   sheetHeaderFill,
 } from '@/config/exceljs-styles';
+import { companyName } from '@/utils/constants';
 
 function getBBox(coordinates: GeoJsonLngLat[]): GeoJsonBBox {
   const longitudes: number[] = coordinates.map(lngLat => lngLat[0]);
@@ -185,9 +186,7 @@ function addExcelSheet(params: {
     //Moving table header to second row
     sheet.duplicateRow(1, 2, true);
     //Adding sheet header before table header
-    sheet.getRow(1).values = [
-      `Exportadora de Café Guaxupé Ltda.  -  ${i18n('navbar.title')}`,
-    ];
+    sheet.getRow(1).values = [`${companyName}  -  ${i18n('navbar.title')}`];
     sheet.getRow(2).values = [
       `${i18n('orderDetails.orderNumber')}:  ${data.orderNumber}        ` +
         `${i18n('orderDetails.date')}:  ${formatDate(data.orderDate)}       ` +
@@ -243,9 +242,7 @@ function addExcelSheet(params: {
     //Moving table header to second row
     sheet.duplicateRow(1, 2, true);
     //Adding sheet header before table header
-    sheet.getRow(1).values = [
-      `Exportadora de Café Guaxupé Ltda.  -  ${i18n('navbar.title')}`,
-    ];
+    sheet.getRow(1).values = [`${companyName}  -  ${i18n('navbar.title')}`];
     sheet.getRow(2).values = [
       `${i18n('geolocationPanel.farmId')}:  ${data.farmId}`,
     ];

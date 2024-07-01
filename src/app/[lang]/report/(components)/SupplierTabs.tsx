@@ -7,17 +7,17 @@ import { TabPanel } from '@/components/TabPanel';
 import { SupplierDataProps } from '@/typing/props';
 import { ProtocolTab } from './ProtocolTab';
 import { GeolocationTab } from './GeolocationTab';
-import { ExportFileMenu } from './ExportFileMenu';
+import { ExportFileMenu } from './ExportFileMenu/ExportFileMenu';
 
 interface SupplierTabsProps extends SupplierDataProps {
   mapRef: React.RefObject<HTMLDivElement>;
 }
 
 export function SupplierTabs(props: SupplierTabsProps) {
-  const { mapRef, supplierData } = props;
-
   const [activeTab, setActiveTab] = useState<0 | 1>(0);
   const i18n = useTranslations('reportPage.labels.suppliersList');
+
+  const { supplierData, mapRef } = props;
 
   const [selectedExportReportsOption, setSelectedExportReportsOption] =
     useState<null | HTMLElement>(null);

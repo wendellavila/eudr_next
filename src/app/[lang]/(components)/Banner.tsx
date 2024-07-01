@@ -3,24 +3,23 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Divider, Grid, Typography } from '@mui/material';
-import { Iconify } from '@/components/Iconify';
-import { basePath, companyName } from '@/utils/constants';
+import { companyName } from '@/utils/constants';
 import { BannerScrollProps } from '@/typing/props';
-
 import { useInView } from '@/utils/hooks';
+import { Iconify } from '@/components/Iconify';
 
 export function Banner(props: BannerScrollProps) {
   const i18n = useTranslations('loginPage.labels.banner');
 
+  const { aboutRef } = props;
+
   const ref = useRef(null);
   const [animate, setAnimate] = useState(false);
   const inView = useInView(ref, 80);
-  const { aboutRef } = props;
 
   useEffect(() => {
     if (inView && !animate) setAnimate(true);
   }, [animate, inView]);
-
   return (
     <Grid
       ref={ref}
@@ -43,9 +42,9 @@ export function Banner(props: BannerScrollProps) {
           <Image
             width={100}
             height={65}
-            src={`${basePath}/logo_dark.svg`}
+            src="/logo_dark.svg"
             alt="Logo"
-            className="mt-3 w-auto h-[80px]"
+            className="mt-3 w-auto h-[80px] md:hidden block animate-fade-down"
             priority={true}
           />
           <h1 className="mb-3 mt-8 font-bold break-words xl:px-20 text-5xl">
@@ -61,9 +60,9 @@ export function Banner(props: BannerScrollProps) {
           >
             <Iconify icon="fluent:leaf-two-16-regular" width={22} />
           </Divider>
-          <Typography component="p" variant="h6">
+          <p className="text-xl font-normal">
             {companyName.toLocaleUpperCase()}
-          </Typography>
+          </p>
         </div>
         <div className="flex-grow"></div>
         <div className="xs:h-10 md:hidden"></div>
@@ -79,20 +78,18 @@ export function Banner(props: BannerScrollProps) {
               width={60}
               className="border-solid border-3 rounded-xl p-1 mb-4"
             />
-            <Typography
-              component="h3"
-              variant="h4"
-              className="mb-2 break-words hyphens-auto"
-            >
+            <h4 className="mt-2 mb-4 break-words hyphens-auto text-3xl font-normal">
               {i18n('deforestationReports')}
-            </Typography>
-            <Typography
-              component="p"
-              variant="body1"
-              className="max-w-96 m-auto text-md"
-            >
-              {i18n('deforestationReportsDescription')}
-            </Typography>
+            </h4>
+            <div className="flex flex-col items-center">
+              <Typography
+                component="p"
+                variant="body1"
+                className="max-w-96 text-md"
+              >
+                {i18n('deforestationReportsDescription')}
+              </Typography>
+            </div>
           </Grid>
           <Grid component="article" item xs={12} sm={6} className="px-10">
             <Iconify
@@ -100,20 +97,18 @@ export function Banner(props: BannerScrollProps) {
               width={60}
               className="border-solid border-3 rounded-xl p-1 mb-4"
             />
-            <Typography
-              component="h3"
-              variant="h4"
-              className="mb-2 break-words hyphens-auto"
-            >
+            <h4 className="mt-2 mb-4 break-words hyphens-auto text-3xl font-normal">
               {i18n('geopositioning')}
-            </Typography>
-            <Typography
-              component="p"
-              variant="body1"
-              className="max-w-96 m-auto text-md"
-            >
-              {i18n('geopositioningDescription')}
-            </Typography>
+            </h4>
+            <div className="flex flex-col items-center">
+              <Typography
+                component="p"
+                variant="body1"
+                className="max-w-96 m-auto text-md"
+              >
+                {i18n('geopositioningDescription')}
+              </Typography>
+            </div>
           </Grid>
         </Grid>
         <div className="flex-grow xs:mb-8"></div>
@@ -134,7 +129,7 @@ export function Banner(props: BannerScrollProps) {
               icon="carbon:chevron-down"
               width={40}
               height={40}
-              color="white"
+              className="text-white"
             />
           </div>
         </a>

@@ -2,6 +2,18 @@ import { createTranslator } from 'next-intl';
 import { i18nConfig } from '@/config/i18n';
 import { SupplierData, I18n } from '@/typing/types';
 
+export function isEmailValid(email: string) {
+  return /^\S+@\S+$/.test(email);
+}
+export function isPasswordValid(password: string) {
+  // regex matches if password is INVALID
+  // Checking for 8 characters + lowercase + uppercase + number + symbol
+  //const passwordRegex = /^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$/;
+  //return !passwordRegex.test(password);
+
+  return password.length >= 8;
+}
+
 /**
  * Get supplier status based on protocol status
  * @param {SupplierData} data - Supplier data

@@ -7,16 +7,16 @@ import { archivo, rubik } from '@/config/fonts';
 import { LatLng } from '@/typing/types';
 
 interface MapMarkerProps {
-  farmId: string;
-  city: string;
-  state: string;
   area: number;
   center: LatLng;
+  city: string;
+  farmId: string;
+  state: string;
 }
 
 export function MapMarker(props: MapMarkerProps) {
-  const { center, farmId, state, city, area } = props;
   const i18n = useTranslations('reportPage.labels.geolocationPanel');
+  const { area, center, city, farmId, state } = props;
   const [isMarkerInfoOpen, setMarkerInfoOpen] = useState<boolean>(false);
 
   return (
@@ -35,7 +35,7 @@ export function MapMarker(props: MapMarkerProps) {
             setMarkerInfoOpen(false);
           }}
         >
-          <article id="" className={`py-2 px-1 ${archivo.className}`}>
+          <article className={`py-2 px-1 ${archivo.className}`}>
             <div className="mb-1 break-words">
               <span className="font-bold">{i18n('farmId')}: </span>
               {farmId}

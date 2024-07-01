@@ -4,8 +4,13 @@ import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/Navbar';
 import { NavbarDrawer } from './NavbarDrawer';
 
-export function HomeNavbar(props: { customerName: string }) {
-  const { customerName } = props;
+interface Props {
+  customerName: string;
+  logo?: string;
+}
+
+export function HomeNavbar(props: Props) {
+  const { customerName, logo } = props;
   const i18n = useTranslations('ordersPage.labels.navbar');
   const [isDrawerOpen, setDrawerOpen] = useState<boolean>(false);
   return (
@@ -13,6 +18,7 @@ export function HomeNavbar(props: { customerName: string }) {
       drawer={
         <NavbarDrawer
           customerName={customerName}
+          logo={logo}
           isDrawerOpen={isDrawerOpen}
           setDrawerOpen={setDrawerOpen}
         />

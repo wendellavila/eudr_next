@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import {
@@ -37,9 +37,16 @@ interface OrdersListFiltersProps {
   setMaxVolume: SetState<number>;
   setMaxVolumeLimit: SetState<number>;
   setSearchText: SetState<string>;
+  showCustomerName?: boolean;
 }
 
 export function OrdersListFilters(props: OrdersListFiltersProps) {
+  const isMedium = useMediaQuery(theme.breakpoints.down('lg'));
+
+  const i18n = useTranslations('ordersPage.labels.orders');
+  const lang = useParams().lang as string;
+  const [filtersVisibility, setFiltersVisibility] = useState(!isMedium);
+
   const {
     minDate,
     maxDate,
@@ -55,12 +62,17 @@ export function OrdersListFilters(props: OrdersListFiltersProps) {
     setMinVolume,
     setMaxVolume,
     setSearchText,
+    showCustomerName,
   } = props;
-  const isMedium = useMediaQuery(theme.breakpoints.down('lg'));
 
-  const i18n = useTranslations('ordersPage.labels.orders');
-  const lang = useParams().lang as string;
-  const [filtersVisibility, setFiltersVisibility] = useState(!isMedium);
+  const [sliderValue, setSliderValue] = useState<number[]>([
+    minVolumeLimit,
+    maxVolumeLimit,
+  ]);
+
+  useEffect(() => {
+    setSliderValue([minVolumeLimit, maxVolumeLimit]);
+  }, [minVolumeLimit, maxVolumeLimit]);
 
   // Locale for MUI DatePicker
   const getDatePickerLocaleText = (lang: string) => {
@@ -106,7 +118,11 @@ export function OrdersListFilters(props: OrdersListFiltersProps) {
             <Grid item xs={7} sm={4} md={3}>
               <TextField
                 variant="standard"
-                label={i18n('searchOrderNumber')}
+                label={i18n(
+                  showCustomerName
+                    ? 'searchOrderNumberOrCustomerName'
+                    : 'searchOrderNumber'
+                )}
                 value={searchText}
                 InputProps={{
                   startAdornment: (
@@ -191,11 +207,15 @@ export function OrdersListFilters(props: OrdersListFiltersProps) {
                   min={minVolumeLimit}
                   max={maxVolumeLimit}
                   size="medium"
-                  value={[minVolume, maxVolume]}
-                  onChange={(_, newValue: number | number[]) => {
-                    newValue = newValue as number[];
-                    setMinVolume(newValue[0]);
-                    setMaxVolume(newValue[1]);
+                  value={sliderValue}
+                  onChange={(_, value) => {
+                    value = value as number[];
+                    setSliderValue(value);
+                  }}
+                  onChangeCommitted={(_, value) => {
+                    value = value as number[];
+                    setMinVolume(value[0]);
+                    setMaxVolume(value[1]);
                   }}
                   valueLabelDisplay="auto"
                   getAriaLabel={() => i18n('volumeRange')}

@@ -11,7 +11,7 @@ export async function generateMetadata({
     title: i18n('title'),
     description: i18n('description'),
     icons: {
-      icon: `https://intranet.guaxupe.com.br/assets/img/ecgl/favicon.png`,
+      icon: `/favicon.png`,
     },
   };
 }

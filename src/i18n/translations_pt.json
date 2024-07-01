@@ -1,27 +1,65 @@
 {
     "metadata": {
-        "title": "Rastreamento de Conformidade com a EUDR",
-        "description": "Rastreamento de Conformidade com a EUDR do café da Exportadora de Café Guaxupé Ltda."
+        "title": "EUDR Next",
+        "description": "Rastreamento de Conformidade com a EUDR"
+    },
+    "loadingScreen": {
+        "labels": {
+            "notRedirected": "Não foi redirecionado?",
+            "clickHere": "Clique aqui",
+            "goToFrontPage": "para ir para a página inicial."
+        }
+    },
+    "dashboardPage": {
+        "title": "EUDR Next - Dashboard",
+        "description": "Rastreamento de Conformidade com a EUDR",
+        "labels": {
+            "orders": "Pedidos",
+            "viewAllOrders": "Ver todos os pedidos de clientes",
+            "createAccount": "Criar conta",
+            "generateAccountCreationLink": "Gerar link de criação de conta",
+            "navbar": {
+                "title": "Dashboard",
+                "menu": "Menu"
+            },
+            "accountCreation": {
+                "customer": "Cliente",
+                "email": "E-mail",
+                "password": "Senha",
+                "confirmPassword": "Confirmar Senha",
+                "create": "Criar",
+                "accountCreationError": "Houve um erro ao criar a conta.",
+                "accountCreationSuccess": "Conta criada com sucesso!",
+                "linkGenerationError": "Houve um erro ao gerar o link de criação de conta.",
+                "linkGenerated": "Link gerado com sucesso!",
+                "emailInUse": "O e-mail fornecido já está associado a uma conta existente.",
+                "accountCreationServiceUnavailable": "O serviço de criação de contas está indisponível.",
+                "showPassword": "Exibir senha",
+                "hidePassword": "Esconder senha",
+                "invalidPassword": "Senhas devem conter no mínimo 8 caracteres.",
+                "passwordsDoNotMatch": "As senhas digitadas devem ser iguais.",
+                "invalidEmail": "O e-mail digitado é inválido.",
+                "showHidePassword": "Exibir/esconder senha",
+                "copyToClipboard": "Copiar para a área de transferência"
+            }
+        }
     },
     "ordersPage": {
-        "title": "Rastreamento de Conformidade com a EUDR - Compras",
+        "title": "EUDR Next - Pedidos",
         "description": "Rastreamento de Conformidade com a EUDR",
         "labels": {
             "navbar": {
-                "title": "Rastreamento EUDR",
+                "title": "Pedidos",
                 "menu": "Menu",
                 "goBack": "Voltar"
             },
             "drawer": {
-                "changePassword": "Alterar Senha",
-                "logout": "Sair"
-            },
-            "changePasswordModal": {
-                "title": "Alterar Senha",
-                "currentPassword": "Senha Atual",
-                "newPassword": "Nova Senha",
-                "repeatNewPassword": "Repetir Nova Senha",
-                "confirm": "Confirmar"
+                "accountSettings": "Configurações da Conta",
+                "logout": "Sair",
+                "home": "Início",
+                "coffeeBeans": "Grãos de Café",
+                "customerLogo": "Logo do Cliente",
+                "orders": "Pedidos"
             },
             "orders": {
                 "title": "Pedidos",
@@ -34,6 +72,7 @@
                 "maxVolume": "Volume Máximo",
                 "volumeRange": "Intervalo de Volume",
                 "searchOrderNumber": "Pesquisar Número do Pedido",
+                "searchOrderNumberOrCustomerName": "Pesquisar Número do Pedido/Nome Cliente",
                 "dateFrom": "Data de",
                 "dateTo": "Data Até",
                 "sortBy": "Ordenar por",
@@ -41,21 +80,23 @@
                 "ascending": "ascendente",
                 "descending": "descendente",
                 "rowsPerPage": "Linhas por página",
-                "noOrdersError": "Não foi possível carregar os pedidos",
-                "noFilteredOrdersAlert": "Nenhum pedido encontrado com os filtros selecionados",
+                "noOrdersError": "Não foi possível carregar os pedidos.",
+                "noFilteredOrdersAlert": "Nenhum pedido encontrado com os filtros selecionados.",
                 "clear": "Limpar",
                 "hideFilters": "Esconder Filtros",
-                "showFilters": "Exibir Filtros"
+                "showFilters": "Exibir Filtros",
+                "customerName": "Cliente"
             }
         }
     },
     "loginPage": {
-        "title": "Rastreamento de Conformidade com a EUDR",
+        "title": "EUDR Next",
         "description": "Rastreamento de Conformidade com a EUDR",
         "labels": {
             "banner": {
                 "title": "Portal de Rastreamento de Conformidade com a EUDR",
                 "learnMore": "Saiba Mais",
+                "coffeeBeans": "Grãos de Café",
                 "deforestationReports": "Laudos ambientais",
                 "deforestationReportsDescription": "Veja a situação dos fornecedores de café e propriedades rurais em 10 diferentes órgãos governamentais e ONGs",
                 "geopositioning": "Geoposicionamento",
@@ -65,13 +106,15 @@
                 "title": "Entrar",
                 "emailAddress": "E-mail",
                 "password": "Senha",
-                "showPassword": "Exibir",
-                "hidePassword": "Esconder",
+                "showPassword": "Exibir senha",
+                "hidePassword": "Esconder senha",
                 "rememberMe": "Manter-me logado",
                 "forgotPassword": "Recuperar senha",
                 "signUp": "Não tem uma conta? Registrar",
                 "switchLanguage": "Alterar Idioma",
-                "showHidePassword": "Exibir/Esconder Senha",
+                "showHidePassword": "Exibir/esconder senha",
+                "wrongCredentials": "E-mail ou senha incorretos.",
+                "loginServiceUnavailable": "O serviço de login está indisponível.",
                 "noScript": "Você precisa habilitar o JavaScript no seu navegador para entrar na plataforma."
             },
             "about": {
@@ -82,7 +125,7 @@
                 },
                 "deforestation": {
                     "title": "Como o desmatamento é monitorado?",
-                    "details": "Para certificar que o nosso café é livre de desmatamento, recuperamos informações de 10 diferentes órgãos governamentais e ONGs que divulgam dados públicos sobre desmatamento. São eles:\nAlguns desses órgãos, como o PRODES e o MapBiomas, fazem monitoramento via satélite de regiões de floresta e publicam alertas de desmatamento periodicamente. Já órgãos como o IBAMA e o SEMA-MT publicam listas de infratores e áreas embargadas por desmatamento.\nA geolocalização das propriedades é recuperada junto ao SICAR – Sistema de Cadastro Ambiental Rural, e através dela é possível fazer um cruzamento entre os alertas e embargos de desmatamento e as propriedades fornecedoras de café.\nTendo esses dados, podemos garantir que o café exportado provém de uma propriedade rural sem desmatamento e pertencente a um proprietário sem embargos ambientais."
+                    "details": "Para certificar que o café é livre de desmatamento, recuperamos informações de 10 diferentes órgãos governamentais e ONGs que divulgam dados públicos sobre desmatamento. São eles:\nAlguns desses órgãos, como o PRODES e o MapBiomas, fazem monitoramento via satélite de regiões de floresta e publicam alertas de desmatamento periodicamente. Já órgãos como o IBAMA e o SEMA-MT publicam listas de infratores e áreas embargadas por desmatamento.\nA geolocalização das propriedades é recuperada junto ao SICAR – Sistema de Cadastro Ambiental Rural, e através dela é possível fazer um cruzamento entre os alertas e embargos de desmatamento e as propriedades fornecedoras de café.\nTendo esses dados, podemos garantir que o café exportado provém de uma propriedade rural sem desmatamento e pertencente a um proprietário sem embargos ambientais."
                 },
                 "platform": {
                     "title": "Como funciona o portal?",
@@ -90,13 +133,13 @@
                 },
                 "access": {
                     "title": "Como consigo acesso ao portal?",
-                    "details": "O acesso ao portal é concedo sob demanda aos nossos clientes. Para requisitar acesso, entre em contato pelo e-mail placeholder@email.com."
+                    "details": "O acesso ao portal é concedo sob demanda aos nossos clientes. Para requisitar acesso, entre em contato pelo e-mail eudr@example.com.br."
                 }
             }
         }
     },
     "reportPage": {
-        "title": "Rastreamento de Conformidade com a EUDR - Relatório",
+        "title": "EUDR Next - Relatório",
         "description": "Rastreamento de Conformidade com a EUDR",
         "labels": {
             "navbar": {
@@ -125,7 +168,7 @@
                 "statusUnlocked": "Desbloqueado",
                 "lastUpdate": "Última atualização",
                 "protocolItems": {
-                    "UNIDADES_CONSERVACAO": {
+                    "UNIDADES_CONSERVACAO_APA_WARNING": {
                         "name": "Unidades de Conservação",
                         "institution": "Ministério do Meio Ambiente e Mudança do Clima",
                         "lockedDetails": "",
@@ -215,8 +258,6 @@
                 "statusUnlocked": "Desbloqueado",
                 "geolocation": "Geolocalização",
                 "deforestationReports": "Laudos Ambientais",
-                "expand": "Expandir",
-                "close": "Fechar",
                 "exportReports": "Exportar Laudos",
                 "exportCoordinates": "Exportar Coordenadas",
                 "exportAllSuppliers": "Exportar Todos os Fornecedores",
@@ -227,7 +268,8 @@
                 "volume": "Volume",
                 "date": "Data",
                 "orderNumber": "Número do Pedido",
-                "customer": "Cliente",
+                "customerName": "Nome do Cliente",
+                "country": "País",
                 "supplierNumber": "Nº de Fornecedores",
                 "status": "Situação",
                 "statusLocked": "Bloqueado",
@@ -236,11 +278,36 @@
             }
         }
     },
-    "loadingScreen": {
+    "settingsPage": {
+        "title": "EUDR Next - Configurações da Conta",
+        "description": "Rastreamento de Conformidade com a EUDR",
         "labels": {
-            "notRedirected": "Não foi redirecionado?",
-            "clickHere": "Clique aqui",
-            "goToFrontPage": "para ir para a página inicial."
+            "navbar": {
+                "title": "Configurações da Conta",
+                "goBack": "Voltar"
+            },
+            "accountUpdate": {
+                "changeEmail": "Alterar E-mail",
+                "changePassword": "Alterar Senha",
+                "currentEmail": "E-mail atual",
+                "newEmail": "Novo e-mail",
+                "change": "Alterar",
+                "invalidEmail": "O e-mail digitado é inválido.",
+                "emailInUse": "O e-mail fornecido já está associado a uma conta existente.",
+                "currentPassword": "Senha atual",
+                "newPassword": "Nova senha",
+                "confirmNewPassword": "Confirmar senha",
+                "showPassword": "Exibir senha",
+                "hidePassword": "Esconder senha",
+                "invalidPassword": "Senhas devem conter no mínimo 8 caracteres.",
+                "passwordsDoNotMatch": "As senhas digitadas devem ser iguais.",
+                "showHidePassword": "Exibir/esconder senha",
+                "wrongCurrentPassword": "Senha atual incorreta.",
+                "accountUpdateError": "Ocorreu um erro ao atualizar sua conta.",
+                "accountUpdateServiceUnavailable": "O serviço de atualização de contas está indisponível.",
+                "passwordUpdated": "Senha atualizada com sucesso.",
+                "emailUpdated": "E-mail atualizado com sucesso."
+            }
         }
     }
 }

@@ -7,6 +7,7 @@ import { FrontSection } from './(components)/FrontSection';
 export function ClientLoginPage() {
   const aboutRef = useRef<HTMLElement>(null);
   const registerRef = useRef<HTMLElement>(null);
+
   return (
     <main>
       <FrontSection aboutRef={aboutRef} registerRef={registerRef} />

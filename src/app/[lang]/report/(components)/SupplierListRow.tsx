@@ -9,7 +9,7 @@ import { SupplierDataProps } from '@/typing/props';
 import { SupplierTabs } from './SupplierTabs';
 
 export function SupplierListRow(props: SupplierDataProps) {
-  const { supplierData: supplier } = props;
+  const supplier = props.supplierData;
   const [isOpen, setOpen] = useState<boolean>(false);
   const i18n = useTranslations('reportPage.labels');
   const status = getSupplierStatus(supplier);
@@ -32,22 +32,24 @@ export function SupplierListRow(props: SupplierDataProps) {
               }`
             )}
           >
-            <Iconify
-              icon={
-                status === 'NO_ALERT'
-                  ? 'ph:seal-check-fill'
-                  : 'ph:seal-warning-fill'
-              }
-              className={
-                status === 'NO_ALERT' ? 'text-emerald-600' : 'text-red-600'
-              }
-              width={22}
-              aria-label={i18n(
-                `suppliersList.${
-                  status === 'NO_ALERT' ? 'statusUnlocked' : 'statusLocked'
-                }`
-              )}
-            />
+            <span>
+              <Iconify
+                icon={
+                  status === 'NO_ALERT'
+                    ? 'ph:seal-check-fill'
+                    : 'ph:seal-warning-fill'
+                }
+                className={
+                  status === 'NO_ALERT' ? 'text-emerald-600' : 'text-red-600'
+                }
+                width={22}
+                aria-label={i18n(
+                  `suppliersList.${
+                    status === 'NO_ALERT' ? 'statusUnlocked' : 'statusLocked'
+                  }`
+                )}
+              />
+            </span>
           </Tooltip>
         </Grid>
         <Grid item xs={4} md={5} className="px-2 flex flex-col justify-center">
@@ -63,15 +65,11 @@ export function SupplierListRow(props: SupplierDataProps) {
           xs={1}
           className="px-2 flex flex-col justify-center items-end"
         >
-          <Tooltip title={i18n(`suppliersList.${isOpen ? 'close' : 'expand'}`)}>
-            <Iconify
-              icon="mdi:chevron-down"
-              width={30}
-              className={`text-neutral-600 ${
-                isOpen ? 'rotate-180' : 'rotate-0'
-              }`}
-            />
-          </Tooltip>
+          <Iconify
+            icon="mdi:chevron-down"
+            width={30}
+            className={`text-neutral-600 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+          />
         </Grid>
       </Grid>
     </ListRow>

@@ -22,7 +22,11 @@ export default async function InternationalizedLayout({
   const i18n = await getTranslationMessages(lang);
   return (
     <html lang={lang}>
-      <body className={`${archivo.className} selection:bg-primary/25`}>
+      <body
+        className={`m-0 box-border ${archivo.className} min-h-dvh
+      bg-surface text-foreground  selection:bg-primary/25 flex flex-col
+      `}
+      >
         <NextIntlClientProvider
           locale={lang}
           messages={i18n}

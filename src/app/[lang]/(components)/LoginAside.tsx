@@ -2,15 +2,13 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { Grid } from '@mui/material';
-
 import { LanguageSelector } from '@/components/LanguageSelector';
-import { LoginForm } from './LoginForm';
-import { basePath } from '@/utils/constants';
 import { BannerScrollProps } from '@/typing/props';
+import { LoginForm } from './LoginForm';
 import { useInView } from '@/utils/hooks';
+import { TokenProvider } from '@/context/TokenContext';
 
 export function LoginAside(props: BannerScrollProps) {
-  const { registerRef } = props;
   const ref = useRef(null);
   const [animate, setAnimate] = useState(false);
   const inView = useInView(ref, 80);
@@ -38,7 +36,7 @@ export function LoginAside(props: BannerScrollProps) {
         <Image
           width={100}
           height={65}
-          src={`${basePath}/logo.svg`}
+          src="/logo.svg"
           alt="Logo"
           className={`hidden lg:inline w-auto h-[80px] mt-8
           ${animate ? 'animate-fade-down' : ''}`}
@@ -49,7 +47,9 @@ export function LoginAside(props: BannerScrollProps) {
           className={`mb-12 lg:mb-0
           ${animate ? 'animate-fade-down animate-delay-[100ms]' : ''}`}
         >
-          <LoginForm {...props} />
+          <TokenProvider>
+            <LoginForm {...props} />
+          </TokenProvider>
         </div>
         <div className="grow-[5]"></div>
         <div

@@ -1,29 +1,26 @@
 'use client';
-import { Link as MUILink, Typography } from '@mui/material';
-import { companyName } from '@/utils/constants';
+import { companyName, deployPath } from '@/utils/constants';
 import { ComponentProps } from '@/typing/props';
 
 export function CopyrightText(props: ComponentProps) {
   const { className } = props;
   return (
-    <article id="copyright">
-      <Typography
-        component="span"
-        variant="body2"
-        align="center"
-        className={`flex flex-row justify-center ${className ?? ''}`}
+    <article
+      id="copyright"
+      className={`flex flex-row flex-wrap items-center justify-center text-center text-sm ${
+        className ?? ''
+      }`}
+    >
+      <span className={`mt-0 flex flex-row justify-center`}>
+        {`© ${new Date().getFullYear()}`}
+      </span>
+      <a
+        className="no-underline hover:underline text-inherit ml-1"
+        target="_blank"
+        href={deployPath}
       >
-        {`© ${new Date().getFullYear()}`}&nbsp;
-        <MUILink
-          color="inherit"
-          href="#"
-          underline="hover"
-          target="_blank"
-          className="block"
-        >
-          {companyName.toUpperCase()}
-        </MUILink>
-      </Typography>
+        {companyName.toUpperCase()}
+      </a>
     </article>
   );
 }

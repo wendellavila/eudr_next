@@ -1,27 +1,65 @@
 {
     "metadata": {
-        "title": "EUDR Compliance Tracking",
-        "description": "Exportadora de Café Guaxupé Ltda.'s EUDR Compliance Tracking Platform"
+        "title": "EUDR Next",
+        "description": "EUDR Compliance Tracking Platform"
+    },
+    "loadingScreen": {
+        "labels": {
+            "notRedirected": "Not redirected?",
+            "clickHere": "Click here",
+            "goToFrontPage": "to go to the front page."
+        }
+    },
+    "dashboardPage": {
+        "title": "EUDR Next - Dashboard",
+        "description": "EUDR Compliance Tracking Platform",
+        "labels": {
+            "orders": "Orders",
+            "viewAllOrders": "View all customer orders",
+            "createAccount": "Create account",
+            "generateAccountCreationLink": "Generate account creation link",
+            "navbar": {
+                "title": "Dashboard",
+                "menu": "Menu"
+            },
+            "accountCreation": {
+                "customer": "Customer",
+                "email": "Email",
+                "password": "Password",
+                "confirmPassword": "Confirm Password",
+                "create": "Create",
+                "accountCreationError": "There was an error when creating the account.",
+                "accountCreationSuccess": "Account created successfully!",
+                "emailInUse": "The email provided is already associated with an existing account.",
+                "linkGenerationError": "There was an error when generating the account creation link.",
+                "linkGenerated": "Link generated successfully!",
+                "accountCreationServiceUnavailable": "Account creation service unavailable.",
+                "showPassword": "Show password",
+                "hidePassword": "Hide password",
+                "invalidPassword": "Passwords must have at least 8 characters.",
+                "passwordsDoNotMatch": "Passwords do not match.",
+                "invalidEmail": "Email is invalid.",
+                "showHidePassword": "Show/Hide Password",
+                "copyToClipboard": "Copy to clipboard"
+            }
+        }
     },
     "ordersPage": {
-        "title": "EUDR Compliance Tracking - Orders",
+        "title": "EUDR Next - Orders",
         "description": "EUDR Compliance Tracking Platform",
         "labels": {
             "navbar": {
-                "title": "EUDR Tracking",
+                "title": "Orders",
                 "menu": "Menu",
                 "goBack": "Go Back"
             },
             "drawer": {
-                "changePassword": "Change Password",
-                "logout": "Log Out"
-            },
-            "changePasswordModal": {
-                "title": "Change Password",
-                "currentPassword": "Current Password",
-                "newPassword": "New Password",
-                "repeatNewPassword": "Repeat New Password",
-                "confirm": "Confirm"
+                "accountSettings": "Account Settings",
+                "home": "Home",
+                "logout": "Log Out",
+                "coffeeBeans": "Coffee Beans",
+                "customerLogo": "Customer Logo",
+                "orders": "Orders"
             },
             "orders": {
                 "title": "Orders",
@@ -34,6 +72,7 @@
                 "maxVolume": "Maximum Volume",
                 "volumeRange": "Volume Range",
                 "searchOrderNumber": "Search Order Number",
+                "searchOrderNumberOrCustomerName": "Search Order Number/Customer Name",
                 "dateFrom": "Date From",
                 "dateTo": "Date To",
                 "sortBy": "Sort by",
@@ -41,21 +80,23 @@
                 "ascending": "ascending",
                 "descending": "descending",
                 "rowsPerPage": "Rows per page",
-                "noOrdersError": "Orders could not be loaded",
-                "noFilteredOrdersAlert": "No orders found with the specified filters",
+                "noOrdersError": "Orders could not be loaded.",
+                "noFilteredOrdersAlert": "No orders found with the specified filters.",
                 "clear": "Clear",
                 "hideFilters": "Hide Filters",
-                "showFilters": "Show Filters"
+                "showFilters": "Show Filters",
+                "customerName": "Customer Name"
             }
         }
     },
     "loginPage": {
-        "title": "EUDR Compliance Tracking",
+        "title": "EUDR Next",
         "description": "EUDR Compliance Tracking Platform",
         "labels": {
             "banner": {
                 "title": "EUDR Compliance Tracking Platform",
                 "learnMore": "Learn More",
+                "coffeeBeans": "Coffee Beans",
                 "deforestationReports": "Deforestation Reports",
                 "deforestationReportsDescription": "Check the status of coffee suppliers and supplying farms in 10 different government agencies and NGOs",
                 "geopositioning": "Geopositioning",
@@ -65,13 +106,15 @@
                 "title": "Log In",
                 "emailAddress": "Email Address",
                 "password": "Password",
-                "showPassword": "Show",
-                "hidePassword": "Hide",
+                "showPassword": "Show password",
+                "hidePassword": "Hide password",
                 "rememberMe": "Remember me",
                 "forgotPassword": "Forgot password?",
                 "signUp": "Don't have an account? Register",
                 "switchLanguage": "Switch Language",
-                "showHidePassword": "Show/Hide Password",
+                "showHidePassword": "Show/hide password",
+                "wrongCredentials": "Wrong email or password.",
+                "loginServiceUnavailable": "Login service unavailable.",
                 "noScript": "You need to enable JavaScript on your browser to be able to log in."
             },
             "about": {
@@ -90,13 +133,13 @@
                 },
                 "access": {
                     "title": "How do I gain access to the platform?",
-                    "details": "Access to the platform is granted on demand to our customers. To request access, please contact placeholder@email.com."
+                    "details": "Access to the platform is granted on demand to our customers. To request access, please contact eudr@example.com."
                 }
             }
         }
     },
     "reportPage": {
-        "title": "EUDR Compliance Tracking - Report",
+        "title": "EUDR Next - Report",
         "description": "EUDR Compliance Tracking Platform",
         "labels": {
             "navbar": {
@@ -125,7 +168,7 @@
                 "statusUnlocked": "Unlocked",
                 "lastUpdate": "Last update",
                 "protocolItems": {
-                    "UNIDADES_CONSERVACAO": {
+                    "UNIDADES_CONSERVACAO_APA_WARNING": {
                         "name": "Natural Conservation Areas",
                         "institution": "Ministry of Environment and Climate Change",
                         "lockedDetails": "Property have superposition with natural conservation areas.",
@@ -215,8 +258,6 @@
                 "statusUnlocked": "Unlocked",
                 "geolocation": "Geolocation",
                 "deforestationReports": "Deforestation Reports",
-                "expand": "Expand",
-                "close": "Close",
                 "exportReports": "Export Reports",
                 "exportCoordinates": "Export Coordinates",
                 "exportAllSuppliers": "Export All Suppliers",
@@ -227,7 +268,8 @@
                 "volume": "Volume",
                 "date": "Date",
                 "orderNumber": "Order Number",
-                "customer": "Customer",
+                "customerName": "Customer Name",
+                "country": "Country",
                 "supplierNumber": "No. of Suppliers",
                 "status": "Status",
                 "statusLocked": "Locked",
@@ -236,11 +278,35 @@
             }
         }
     },
-    "loadingScreen": {
+    "settingsPage": {
+        "title": "EUDR Next - Account Settings",
+        "description": "EUDR Compliance Tracking Platform",
         "labels": {
-            "notRedirected": "Not redirected?",
-            "clickHere": "Click here",
-            "goToFrontPage": "to go to the front page."
+            "navbar": {
+                "title": "Account Settings",
+                "goBack": "Go Back"
+            },
+            "accountUpdate": {
+                "changeEmail": "Change Email",
+                "changePassword": "Change Password",
+                "currentEmail": "Current email",
+                "newEmail": "New email",
+                "change": "Change email",
+                "emailInUse": "The email provided is already associated with an existing account.",
+                "invalidEmail": "Email is invalid.",
+                "currentPassword": "Current password",
+                "newPassword": "New password",
+                "confirmNewPassword": "Confirm new password",
+                "showPassword": "Show password",
+                "hidePassword": "Hide password",
+                "showHidePassword": "Show/hide password",
+                "invalidPassword": "Passwords must have at least 8 characters.",
+                "wrongCurrentPassword": "Wrong current password.",
+                "accountUpdateError": "An error occurred while updating your account.",
+                "accountUpdateServiceUnavailable": "The account update service is unavailable.",
+                "passwordUpdated": "Password updated successfully.",
+                "emailUpdated": "Email updated successfully."
+            }
         }
     }
 }

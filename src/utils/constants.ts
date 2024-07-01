@@ -1,13 +1,18 @@
-import { SourcesData } from '@/typing/types';
 export const companyName = 'Company Name';
 
-const isProduction = process.env.NODE_ENV === 'production';
+export const isProduction = process.env.NODE_ENV === 'production';
 export const basePath = isProduction ? '/projects/eudr_next' : '';
-const deployUrl = isProduction ? 'https://wendellavila.github.io' : '';
-export const deployPath = isProduction ? `${deployUrl}${basePath}` : '';
+const deployUrl = 'https://wendellavila.github.io/projects/eudr_next';
+export const deployPath = `${deployUrl}${basePath}`;
 
+interface SourcesData {
+  [type: string]: {
+    image: string;
+    url: string;
+  };
+}
 export const sourcesData: SourcesData = {
-  UNIDADES_CONSERVACAO: {
+  UNIDADES_CONSERVACAO_APA_WARNING: {
     image: 'MMA.svg',
     url: 'https://antigo.mma.gov.br/areas-protegidas/cadastro-nacional-de-ucs/mapas.html',
   },

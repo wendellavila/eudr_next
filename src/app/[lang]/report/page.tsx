@@ -1,3 +1,4 @@
+import { TokenProviderReportPage } from '@/context/TokenContext';
 import { ClientReportPage } from './client';
 import { getTranslations } from '@/utils/functions';
 
@@ -11,11 +12,15 @@ export async function generateMetadata({
     title: i18n('title'),
     description: i18n('description'),
     icons: {
-      icon: `https://intranet.guaxupe.com.br/assets/img/ecgl/favicon.png`,
+      icon: `/favicon.png`,
     },
   };
 }
 
 export default function ReportPage() {
-  return <ClientReportPage />;
+  return (
+    <TokenProviderReportPage>
+      <ClientReportPage />
+    </TokenProviderReportPage>
+  );
 }

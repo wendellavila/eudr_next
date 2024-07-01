@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Iconify } from '@/components/Iconify';
 import { i18nConfig } from '@/config/i18n';
 import { useParams, useRouter } from 'next/navigation';
-import { deployPath, basePath } from '@/utils/constants';
+import { deployPath } from '@/utils/constants';
 import { useTranslations } from 'next-intl';
 interface Props {
   id?: string;
@@ -30,7 +30,7 @@ export function LoadingScreen(props: Props) {
       <Image
         width={100}
         height={65}
-        src={`${basePath}/logo.svg`}
+        src="/logo.svg"
         alt="Logo"
         className="mb-10 w-auto h-[100px]"
         priority={true}

@@ -1,5 +1,4 @@
 'use client';
-
 import { useTranslations } from 'next-intl';
 import { Grid, Typography, Tooltip, useMediaQuery } from '@mui/material';
 import { Iconify } from '@/components/Iconify';
@@ -9,6 +8,7 @@ import { ListRow } from '@/components/ListRow';
 import { ListRowHeader } from '@/components/ListRowHeader';
 import { ProtocolData } from '@/typing/types';
 import { zeroPad } from '@/utils/functions';
+
 /**
  * Formats an ISO date string into dd/mm/yyyy hh:mm:ss
  * @param {string} isoDate - An ISO 8601 date string.
@@ -34,12 +34,11 @@ interface ProtocolTabProps {
 }
 
 export function ProtocolTab(props: ProtocolTabProps) {
-  const { id, lastUpdate, protocolData } = props;
-
   const i18n = useTranslations('reportPage.labels.reportsPanel');
   const lang = useParams().lang as string;
   const isSmall = useMediaQuery(theme.breakpoints.down('md'));
 
+  const { id, lastUpdate, protocolData } = props;
   return (
     <section id={id}>
       {!isSmall && (
@@ -53,7 +52,7 @@ export function ProtocolTab(props: ProtocolTabProps) {
             <Typography
               variant="body2"
               className="font-bold break-words hyphens-auto"
-              component="label"
+              component="span"
             >
               {i18n('status')}
             </Typography>
@@ -62,7 +61,7 @@ export function ProtocolTab(props: ProtocolTabProps) {
             <Typography
               variant="body2"
               className="font-bold break-words hyphens-auto"
-              component="label"
+              component="span"
             >
               {i18n('name')}
             </Typography>
@@ -71,7 +70,7 @@ export function ProtocolTab(props: ProtocolTabProps) {
             <Typography
               variant="body2"
               className="font-bold break-words hyphens-auto"
-              component="label"
+              component="span"
             >
               {i18n('institution')}
             </Typography>
@@ -85,7 +84,7 @@ export function ProtocolTab(props: ProtocolTabProps) {
             <Typography
               variant="body2"
               className="font-bold break-words hyphens-auto"
-              component="label"
+              component="span"
             >
               {i18n('details')}
             </Typography>
@@ -107,7 +106,7 @@ export function ProtocolTab(props: ProtocolTabProps) {
                 <Typography
                   variant="caption"
                   className="font-bold"
-                  component="label"
+                  component="span"
                 >
                   {i18n('status')}
                 </Typography>
@@ -117,24 +116,26 @@ export function ProtocolTab(props: ProtocolTabProps) {
                   item.status === 'NO_ALERT' ? 'statusUnlocked' : 'statusLocked'
                 )}
               >
-                <Iconify
-                  icon={
-                    item.status === 'NO_ALERT'
-                      ? 'ph:seal-check-fill'
-                      : 'ph:seal-warning-fill'
-                  }
-                  className={
-                    item.status === 'NO_ALERT'
-                      ? 'text-emerald-600'
-                      : 'text-red-600'
-                  }
-                  width={22}
-                  aria-label={i18n(
-                    item.status === 'NO_ALERT'
-                      ? 'statusUnlocked'
-                      : 'statusLocked'
-                  )}
-                />
+                <span>
+                  <Iconify
+                    icon={
+                      item.status === 'NO_ALERT'
+                        ? 'ph:seal-check-fill'
+                        : 'ph:seal-warning-fill'
+                    }
+                    className={
+                      item.status === 'NO_ALERT'
+                        ? 'text-emerald-600'
+                        : 'text-red-600'
+                    }
+                    width={22}
+                    aria-label={i18n(
+                      item.status === 'NO_ALERT'
+                        ? 'statusUnlocked'
+                        : 'statusLocked'
+                    )}
+                  />
+                </span>
               </Tooltip>
             </Grid>
             <Grid
@@ -148,7 +149,7 @@ export function ProtocolTab(props: ProtocolTabProps) {
                 <Typography
                   variant="caption"
                   className="font-bold"
-                  component="label"
+                  component="span"
                 >
                   {i18n('name')}
                 </Typography>
@@ -169,7 +170,7 @@ export function ProtocolTab(props: ProtocolTabProps) {
                 <Typography
                   variant="caption"
                   className="font-bold"
-                  component="label"
+                  component="span"
                 >
                   {i18n('institution')}
                 </Typography>
@@ -190,7 +191,7 @@ export function ProtocolTab(props: ProtocolTabProps) {
                 <Typography
                   variant="caption"
                   className="font-bold"
-                  component="label"
+                  component="span"
                 >
                   {i18n('details')}
                 </Typography>

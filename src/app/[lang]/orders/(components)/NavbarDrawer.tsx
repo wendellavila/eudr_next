@@ -15,16 +15,17 @@ import { Iconify } from '@/components/Iconify';
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { SetState } from '@/typing/types';
 import { ChangePasswordModal } from './ChangePasswordModal';
-import { basePath } from '@/utils/constants';
+import { baseUrl } from '@/utils/constants';
 
 interface NavbarDrawerProps {
   customerName: string;
   isDrawerOpen: boolean;
   setDrawerOpen: SetState<boolean>;
+  logo?: string;
 }
 
 export function NavbarDrawer(props: NavbarDrawerProps) {
-  const { customerName, isDrawerOpen, setDrawerOpen } = props;
+  const { customerName, isDrawerOpen, setDrawerOpen, logo } = props;
 
   const i18n = useTranslations('ordersPage.labels.drawer');
   const router = useRouter();
@@ -52,7 +53,7 @@ export function NavbarDrawer(props: NavbarDrawerProps) {
             justify-center relative bg-primary"
           >
             <Image
-              src={`${basePath}/cafe-grao.jpg`}
+              src="/cafe-grao.jpg"
               alt="Logo"
               fill={true}
               sizes="350px"

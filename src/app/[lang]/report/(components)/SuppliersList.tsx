@@ -14,18 +14,17 @@ import { Iconify } from '@/components/Iconify';
 import { theme } from '@/config/mui-theme';
 import { getSupplierStatus } from '@/utils/functions';
 import { CardHeader } from '@/components/CardHeader';
-import { ListRowErrorMessage } from '@/components/ListRowErrorMessage';
 import { ListRowHeader } from '@/components/ListRowHeader';
-import { ReportDataProps } from '@/typing/props';
+import { useReportDataContext } from '@/context/ReportDataContext';
 import { ProtocolData, SupplierData } from '@/typing/types';
-import { ExportFileMenu } from './ExportFileMenu';
+import { ExportFileMenu } from './ExportFileMenu/ExportFileMenu';
 import { SupplierListRow } from './SupplierListRow';
+import { StatusMessage } from '@/components/StatusMessage';
 
-export function SuppliersList(props: ReportDataProps) {
-  const { reportData } = props;
-
+export function SuppliersList() {
   const i18n = useTranslations('reportPage.labels');
   const isMediumOrLower = useMediaQuery(theme.breakpoints.down('lg'));
+  const reportData = useReportDataContext();
 
   const [selectedExportOption, setSelectedExportOption] =
     useState<null | HTMLElement>(null);
@@ -70,7 +69,7 @@ export function SuppliersList(props: ReportDataProps) {
       <Card className="max-w-[1200px] w-full">
         <CardHeader
           icon={
-            <Iconify icon="ic:round-agriculture" width={31} className="mr-2" />
+            <Iconify icon="ic:round-agriculture" width={31} className="mr-3" />
           }
           title={i18n('suppliersList.title')}
           actions={
@@ -169,11 +168,9 @@ export function SuppliersList(props: ReportDataProps) {
           </article>
         )}
         {reportData === null && (
-          <ListRowErrorMessage
-            id="suppliers-error"
-            message={i18n('suppliersList.noSuppliersError')}
-            type="error"
-          />
+          <StatusMessage id="suppliers-error" type="error">
+            {i18n('suppliersList.noSuppliersError')}
+          </StatusMessage>
         )}
       </Card>
     </section>

@@ -1,13 +1,9 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { i18nConfig } from '@/config/i18n';
-import { RootLoadingScreen } from './RootLoadingScreen';
+import { RootLoadingScreen } from '@/components/RootLoadingScreen';
 
-/**
- * Returns the preferred language among supported languages in config/i18nConfig
- */
 function getBrowserPreferredLanguage(): string {
   const languages = typeof window !== 'undefined' ? navigator.languages : [];
 

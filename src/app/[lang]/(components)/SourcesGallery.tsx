@@ -1,8 +1,7 @@
 'use client';
-
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { basePath, sourcesData } from '@/utils/constants';
+import { sourcesData } from '@/utils/constants';
 
 export function SourcesGallery() {
   const i18n = useTranslations('reportPage.labels.reportsPanel');
@@ -14,7 +13,7 @@ export function SourcesGallery() {
     'EMBARGO_ICMBIO_DOCUMENT',
     'TERRAS_INDIGENAS',
     'QUILOMBOS',
-    'UNIDADES_CONSERVACAO',
+    'UNIDADES_CONSERVACAO_APA_WARNING',
     'EMBARGO_SLAVERIES_DOCUMENT',
     'EMBARGO_SEMA',
   ].map(type => {
@@ -32,7 +31,7 @@ export function SourcesGallery() {
           <Image
             width={100}
             height={65}
-            src={`${basePath}/${source.image}`}
+            src={`/${source.image}`}
             alt={`${source.institution} - Logo`}
             title={source.institution}
             className="inline w-auto h-[90px] hover:scale-110 duration-300

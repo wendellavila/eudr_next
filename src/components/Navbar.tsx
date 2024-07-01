@@ -1,49 +1,66 @@
 'use client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { Card, IconButton, Typography } from '@mui/material';
+import { Card, IconButton } from '@mui/material';
 import { Iconify } from '@/components/Iconify';
-import { SetState, I18n } from '@/typing/types';
-import { basePath } from '@/utils/constants';
+import { I18n, SetState } from '@/typing/types';
+import { ComponentProps } from '@/typing/props';
 
-interface NavbarProps {
+interface NavbarProps extends ComponentProps {
   titleAppend?: string | undefined;
   i18n: I18n;
   drawer?: React.ReactNode;
   setDrawerOpen?: SetState<boolean>;
+  onBackButton?: () => void;
 }
 
 export function Navbar(props: NavbarProps) {
-  const { i18n, drawer, setDrawerOpen, titleAppend } = props;
   const router = useRouter();
-  const hasDrawer = drawer && setDrawerOpen;
+  const hasDrawer = props.drawer && props.setDrawerOpen;
+
+  const { i18n, titleAppend, onBackButton, className } = props;
 
   return (
     <Card
       component="header"
-      className="px-4 py-3 flex items-center rounded-none justify-between text-foreground z-10"
+      className={`pr-6 py-3 flex items-center rounded-none
+      justify-between z-10 h-9 text-foreground 
+      ${!hasDrawer && !onBackButton ? 'pl-8' : 'pl-4'}
+      ${className ?? ''}`}
     >
-      <IconButton
-        className="mr-3 text-foreground"
-        aria-label={i18n(hasDrawer ? 'menu' : 'goBack')}
-        onClick={() => {
-          if (hasDrawer && setDrawerOpen) {
-            setDrawerOpen(isOpen => !isOpen);
-          } else {
-            router.back();
-          }
-        }}
+      {(hasDrawer || onBackButton) && (
+        <IconButton
+          className="mr-3 text-foreground animate-fade animate-duration-500"
+          aria-label={i18n(hasDrawer ? 'menu' : 'goBack')}
+          onClick={() => {
+            if (hasDrawer && props.setDrawerOpen) {
+              props.setDrawerOpen(isOpen => !isOpen);
+            } else {
+              if (onBackButton) {
+                onBackButton();
+              } else {
+                router.back();
+              }
+            }
+          }}
+        >
+          <Iconify
+            icon={hasDrawer ? 'mdi:menu' : 'mdi:arrow-back'}
+            width={23}
+          />
+        </IconButton>
+      )}
+      {props.drawer}
+      <div
+        className="text-xl font-medium grow animate-fade
+        animate-duration-500 animate-delay-150"
       >
-        <Iconify icon={hasDrawer ? 'mdi:menu' : 'mdi:arrow-back'} width={22} />
-      </IconButton>
-      {drawer}
-      <Typography variant="h6" component="div" className="flex-grow">
-        {i18n('title') + (titleAppend ? ` - ${titleAppend}` : '')}
-      </Typography>
+        <span>{i18n('title') + (titleAppend ? ` - ${titleAppend}` : '')}</span>
+      </div>
       <Image
         width={66}
         height={43}
-        src={`${basePath}/logo.svg`}
+        src="/logo.svg"
         alt="Logo"
         className="inline w-auto h-[30px]"
         priority={true}

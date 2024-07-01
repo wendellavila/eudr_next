@@ -1,21 +1,21 @@
 'use client';
+import { ComponentProps } from '@/typing/props';
 
-import { Typography } from '@mui/material';
-
-interface CardHeaderProps {
+interface CardHeaderProps extends ComponentProps {
   title: string;
   icon?: React.ReactNode;
   actions?: React.ReactNode;
 }
 
 export function CardHeader(props: CardHeaderProps) {
-  const { actions, icon, title } = props;
+  const { title, icon, actions, className } = props;
   return (
-    <div className="flex flex-row bg-stone-800 text-gray-50 px-4 py-2 items-center">
+    <div
+      className={`flex flex-row px-4 py-1.5 items-center
+      bg-stone-800 text-gray-50 ${className ?? ''}`}
+    >
       {icon}
-      <Typography variant="h6" component="h3">
-        {title}
-      </Typography>
+      <h3 className="text-xl m-0 font-medium">{title}</h3>
       {actions && (
         <>
           <div className="grow"></div>

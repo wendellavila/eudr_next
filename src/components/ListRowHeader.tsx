@@ -1,5 +1,4 @@
 'use client';
-
 import { Grid } from '@mui/material';
 import { ComponentProps } from '@/typing/props';
 
