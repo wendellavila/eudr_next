@@ -106,7 +106,7 @@ function UserProfileContent(props: Props) {
         <div className="bg-black/25 w-full h-full absolute top-0 left-0"></div>
         <Avatar className="h-[100px] w-[100px] border-1 border-solid shadow-sm border-white">
           <Image
-            src={logo ?? `/user.webp`}
+            src={logo ?? `${basePath}/user.webp`}
             alt={i18n('customerLogo')}
             width={100}
             height={100}

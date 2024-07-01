@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { sourcesData } from '@/utils/constants';
+import { basePath, sourcesData } from '@/utils/constants';
 
 export function SourcesGallery() {
   const i18n = useTranslations('reportPage.labels.reportsPanel');
@@ -31,7 +31,7 @@ export function SourcesGallery() {
           <Image
             width={100}
             height={65}
-            src={`/${source.image}`}
+            src={`${basePath}/${source.image}`}
             alt={`${source.institution} - Logo`}
             title={source.institution}
             className="inline w-auto h-[90px] hover:scale-110 duration-300
