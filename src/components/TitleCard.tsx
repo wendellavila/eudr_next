@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { ComponentProps } from '@/typing/props';
 import { Card } from '@mui/material';
 import { I18n } from '@/typing/types';
+import { basePath } from '@/utils/constants';
 
 interface Props extends ComponentProps {
   titleAppend?: string | undefined;
@@ -22,7 +23,7 @@ export function TitleCard(props: Props) {
       <Image
         width={66}
         height={43}
-        src="/logo.svg"
+        src={`${basePath}/logo.svg`}
         alt="Logo"
         className="inline w-auto h-[30px]"
         priority={true}

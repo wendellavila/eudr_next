@@ -14,6 +14,7 @@ import {
 import { Iconify } from '@/components/Iconify';
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { SetState } from '@/typing/types';
+import { basePath } from '@/utils/constants';
 
 interface NavbarDrawerProps {
   customerName: string;
@@ -51,7 +52,7 @@ export function NavbarDrawer(props: NavbarDrawerProps) {
             justify-center relative bg-primary"
           >
             <Image
-              src="/cafe-grao.jpg"
+              src={`${basePath}/cafe-grao.jpg`}
               alt="Logo"
               fill={true}
               sizes="350px"

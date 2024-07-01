@@ -42,7 +42,7 @@ export function Banner(props: BannerScrollProps) {
           <Image
             width={100}
             height={65}
-            src="/logo_dark.svg"
+            src="${basePath}/logo_dark.svg"
             alt="Logo"
             className="mt-3 w-auto h-[80px] md:hidden block animate-fade-down"
             priority={true}

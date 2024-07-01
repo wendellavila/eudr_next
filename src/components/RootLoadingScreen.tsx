@@ -4,6 +4,8 @@ import { Iconify } from '@/components/Iconify';
 import { i18nConfig } from '@/config/i18n';
 import { useRouter } from 'next/navigation';
 import { deployPath } from '@/utils/constants';
+import { basePath } from '@/utils/constants';
+
 interface Props {
   id?: string;
 }
@@ -27,7 +29,7 @@ export function RootLoadingScreen(props: Props) {
       <Image
         width={100}
         height={65}
-        src="/logo.svg"
+        src={`${basePath}/logo.svg`}
         alt="Logo"
         className="mb-10 w-auto h-[100px]"
         priority={true}

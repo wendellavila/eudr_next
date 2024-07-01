@@ -5,6 +5,8 @@ import { i18nConfig } from '@/config/i18n';
 import { useParams, useRouter } from 'next/navigation';
 import { deployPath } from '@/utils/constants';
 import { useTranslations } from 'next-intl';
+import { basePath } from '@/utils/constants';
+
 interface Props {
   id?: string;
 }
@@ -30,7 +32,7 @@ export function LoadingScreen(props: Props) {
       <Image
         width={100}
         height={65}
-        src="/logo.svg"
+        src={`${basePath}/logo.svg`}
         alt="Logo"
         className="mb-10 w-auto h-[100px]"
         priority={true}

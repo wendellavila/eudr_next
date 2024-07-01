@@ -7,6 +7,7 @@ import { BannerScrollProps } from '@/typing/props';
 import { LoginForm } from './LoginForm';
 import { useInView } from '@/utils/hooks';
 import { TokenProvider } from '@/context/TokenContext';
+import { basePath } from '@/utils/constants';
 
 export function LoginAside(props: BannerScrollProps) {
   const ref = useRef(null);
@@ -36,7 +37,7 @@ export function LoginAside(props: BannerScrollProps) {
         <Image
           width={100}
           height={65}
-          src="/logo.svg"
+          src={`${basePath}/logo.svg`}
           alt="Logo"
           className={`hidden lg:inline w-auto h-[80px] mt-8
           ${animate ? 'animate-fade-down' : ''}`}

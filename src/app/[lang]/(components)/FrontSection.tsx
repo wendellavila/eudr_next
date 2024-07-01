@@ -5,6 +5,7 @@ import { Grid } from '@mui/material';
 import { BannerScrollProps } from '@/typing/props';
 import { Banner } from './Banner';
 import { LoginAside } from './LoginAside';
+import { basePath } from '@/utils/constants';
 
 function dateToInt() {
   return Number(new Date().toISOString().slice(0, 10).replace(/-/g, ''));
@@ -43,7 +44,7 @@ export function FrontSection(props: BannerScrollProps) {
       bg-center bg-no-repeat bg-tertiary grow relative"
     >
       <Image
-        src={`/cafe-${getRandomInt(0, 9, dateToInt())}.jpg`}
+        src={`${basePath}/cafe-${getRandomInt(0, 9, dateToInt())}.jpg`}
         alt={i18n('coffeeBeans')}
         fill={true}
         sizes="100vw"

@@ -5,6 +5,7 @@ import { Card, IconButton } from '@mui/material';
 import { Iconify } from '@/components/Iconify';
 import { I18n, SetState } from '@/typing/types';
 import { ComponentProps } from '@/typing/props';
+import { basePath } from '@/utils/constants';
 
 interface NavbarProps extends ComponentProps {
   titleAppend?: string | undefined;
@@ -60,7 +61,7 @@ export function Navbar(props: NavbarProps) {
       <Image
         width={66}
         height={43}
-        src="/logo.svg"
+        src={`${basePath}/logo.svg`}
         alt="Logo"
         className="inline w-auto h-[30px]"
         priority={true}

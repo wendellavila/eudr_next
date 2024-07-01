@@ -6,6 +6,7 @@ import { Avatar, Card, ListItemButton } from '@mui/material';
 import { Iconify } from '@/components/Iconify';
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { ComponentProps } from '@/typing/props';
+import { basePath } from '@/utils/constants';
 
 interface Props extends ComponentProps {
   card?: boolean;
@@ -94,7 +95,7 @@ function UserProfileContent(props: Props) {
         justify-center relative bg-primary"
       >
         <Image
-          src="/cafe-grao.jpg"
+          src={`${basePath}/cafe-grao.jpg`}
           alt={i18n('coffeeBeans')}
           sizes="350px"
           className="object-cover"
