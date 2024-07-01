@@ -7,6 +7,7 @@ import { companyName } from '@/utils/constants';
 import { BannerScrollProps } from '@/typing/props';
 import { useInView } from '@/utils/hooks';
 import { Iconify } from '@/components/Iconify';
+import { basePath } from '@/utils/constants';
 
 export function Banner(props: BannerScrollProps) {
   const i18n = useTranslations('loginPage.labels.banner');
@@ -42,7 +43,7 @@ export function Banner(props: BannerScrollProps) {
           <Image
             width={100}
             height={65}
-            src="${basePath}/logo_dark.svg"
+            src={`${basePath}/logo_dark.svg`}
             alt="Logo"
             className="mt-3 w-auto h-[80px] md:hidden block animate-fade-down"
             priority={true}
