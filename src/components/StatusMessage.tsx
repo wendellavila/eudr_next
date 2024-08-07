@@ -3,10 +3,12 @@ import { Iconify } from '@/components/Iconify';
 
 interface Props extends ComponentProps {
   type: 'success' | 'error' | 'alert';
+  textClassName?: string;
+  iconSize?: number;
 }
 
 export function StatusMessage(props: Props) {
-  const { id, children, className, type } = props;
+  const { id, children, className, type, textClassName, iconSize } = props;
   return (
     <article
       id={id}
@@ -23,10 +25,12 @@ export function StatusMessage(props: Props) {
         icon={
           type === 'success' ? 'mdi:success-circle-outline' : 'mdi:info-outline'
         }
-        width={18}
+        width={iconSize ?? 18}
         className="mr-1"
       />
-      <span className="break-words text-sm">{children}</span>
+      <span className={`break-words text-sm ${textClassName ?? ''}`}>
+        {children}
+      </span>
     </article>
   );
 }

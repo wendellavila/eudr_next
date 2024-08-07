@@ -1,5 +1,6 @@
 'use client';
 import { useTranslations } from 'next-intl';
+import { ErrorBoundary } from 'react-error-boundary';
 import { GoogleMap, Polygon } from '@react-google-maps/api';
 import { MapMarker } from '../MapMarker';
 import { StatusMessage } from '@/components/StatusMessage';
@@ -22,32 +23,46 @@ export function MapViewer(props: Props) {
 
   return (
     <div ref={mapRef} className="bg-gray-200 animate-fade rounded">
-      <GoogleMap
-        id="map"
-        mapContainerStyle={{
-          width: '100%',
-          minHeight: '70vmin',
-          borderRadius: '4px',
-        }}
-        center={center}
-        onCenterChanged={() => {}}
-        zoom={16}
-        mapTypeId="hybrid"
-      >
-        {
-          <>
-            <Polygon
-              path={polygon}
-              options={{
-                fillColor: 'gray',
-                strokeColor: 'white',
-                strokeWeight: 1,
-              }}
-            />
-            <MapMarker center={center} {...props} />
-          </>
+      <ErrorBoundary
+        fallback={
+          <div className="overflow-auto py-8 min-h-[700px] flex flex-col justify-center">
+            <StatusMessage
+              type="error"
+              className="!mt-0"
+              textClassName="text-lg"
+              iconSize={20}
+            >
+              {i18n('mapUnavailable')}
+            </StatusMessage>
+          </div>
         }
-      </GoogleMap>
+      >
+        <GoogleMap
+          id="map"
+          mapContainerStyle={{
+            width: '100%',
+            minHeight: '70vmin',
+          }}
+          center={center}
+          onCenterChanged={() => {}}
+          zoom={16}
+          mapTypeId="hybrid"
+        >
+          {
+            <>
+              <Polygon
+                path={polygon}
+                options={{
+                  fillColor: 'gray',
+                  strokeColor: 'white',
+                  strokeWeight: 1,
+                }}
+              />
+              <MapMarker center={center} {...props} />
+            </>
+          }
+        </GoogleMap>
+      </ErrorBoundary>
     </div>
   );
 }
