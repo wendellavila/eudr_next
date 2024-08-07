@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Iconify } from '@/components/Iconify';
 import { CardHeader } from '@/components/CardHeader';
 
-export function OrdersLink() {
+export function ViewOrders() {
   const router = useRouter();
   const lang = useParams().lang;
   const i18n = useTranslations('dashboardPage.labels');
@@ -17,7 +17,7 @@ export function OrdersLink() {
         event.preventDefault();
         router.push(`/${lang}/orders`);
       }}
-      className="flex flex-col h-full
+      className="flex flex-col h-full animate-fade-up
       hover:cursor-pointer hover:scale-y-[102%] hover:scale-x-[101%] transition"
     >
       <CardHeader

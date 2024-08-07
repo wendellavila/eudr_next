@@ -8,7 +8,7 @@ import { UserProfile } from '@/components/UserProfile';
 
 import { Grid } from '@mui/material';
 import { AccountCreationLoader } from './AccountCreationLoader';
-import { OrdersLink } from './OrdersLink';
+import { ViewOrders } from './ViewOrders';
 import { useTokenContext } from '@/context/TokenContext';
 import { useUserDataContext } from '@/context/UserDataContext';
 
@@ -57,7 +57,7 @@ export function DashboardLoader() {
               <div className="grow">
                 <Grid container spacing={2} className="mt-2 lg:mt-4 ">
                   <Grid item xs={12} xl={4}>
-                    <OrdersLink />
+                    <ViewOrders />
                   </Grid>
                   <AccountCreationLoader />
                 </Grid>
