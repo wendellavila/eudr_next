@@ -32,7 +32,7 @@ export function OrderDetails() {
 
   return (
     <section id="order-details" className="p-4 flex flex-col items-center">
-      <Card className="max-w-[1200px] w-full">
+      <Card className="max-w-[1200px] w-full animate-fade-up animate-duration-[800ms]">
         <CardHeader
           title={i18n('title')}
           icon={

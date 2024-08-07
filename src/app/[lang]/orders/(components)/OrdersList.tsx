@@ -149,7 +149,11 @@ export function OrdersList(props: OrdersListProps) {
   ]);
 
   return (
-    <Card component="section" id="orders-list">
+    <Card
+      component="section"
+      id="orders-list"
+      className="animate-fade-up animate-duration-700"
+    >
       <CardHeader
         title={i18n('title')}
         icon={<Iconify icon="mingcute:ship-line" width={28} className="mr-3" />}

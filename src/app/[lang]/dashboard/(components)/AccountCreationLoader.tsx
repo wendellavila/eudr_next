@@ -17,7 +17,7 @@ export function AccountCreationLoader() {
     customerList && (
       <>
         <Grid item xs={12} md={6} xl={4}>
-          <Card className="h-full flex flex-col">
+          <Card className="h-full flex flex-col animate-fade-up">
             <CardHeader
               title={i18n('createAccount')}
               icon={
@@ -32,7 +32,7 @@ export function AccountCreationLoader() {
           </Card>
         </Grid>
         <Grid item xs={12} md={6} xl={4}>
-          <Card className="h-full flex flex-col">
+          <Card className="h-full flex flex-col animate-fade-up">
             <CardHeader
               title={i18n('generateAccountCreationLink')}
               icon={<Iconify icon="tdesign:link" className="mr-3" width={22} />}

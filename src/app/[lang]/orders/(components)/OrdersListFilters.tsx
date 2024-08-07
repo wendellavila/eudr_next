@@ -21,7 +21,7 @@ import { getDayjsLocalization } from '@/config/i18n';
 import { theme } from '@/config/mui-theme';
 import { SetState } from '@/typing/types';
 
-interface OrdersListFiltersProps {
+interface Props {
   minDate: string;
   maxDate: string;
   minDateLimit: string;
@@ -40,7 +40,7 @@ interface OrdersListFiltersProps {
   showCustomerName?: boolean;
 }
 
-export function OrdersListFilters(props: OrdersListFiltersProps) {
+export function OrdersListFilters(props: Props) {
   const isMedium = useMediaQuery(theme.breakpoints.down('lg'));
 
   const i18n = useTranslations('ordersPage.labels.orders');
@@ -113,7 +113,7 @@ export function OrdersListFilters(props: OrdersListFiltersProps) {
             justifyContent="space-evenly"
             columnSpacing={3}
             rowSpacing={2}
-            className="px-6 pt-3 pb-4"
+            className="px-6 pt-3 pb-4 animate-fade-down animate-duration-100"
           >
             <Grid item xs={7} sm={4} md={3}>
               <TextField

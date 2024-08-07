@@ -48,13 +48,13 @@ export function SettingsLoader() {
                 <Grid item xs={12} md={6} xl={4}>
                   <ChangeEmail
                     userData={userData}
-                    className="w-full lg:max-w-[800px]"
+                    className="w-full lg:max-w-[800px] animate-fade-up"
                   />
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <ChangePassword
                     userData={userData}
-                    className="w-full lg:max-w-[800px]"
+                    className="w-full lg:max-w-[800px] animate-fade-up"
                   />
                 </Grid>
               </Grid>

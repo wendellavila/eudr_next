@@ -6,7 +6,7 @@ import { Iconify } from '@/components/Iconify';
 import { archivo, rubik } from '@/config/fonts';
 import { LatLng } from '@/typing/types';
 
-interface MapMarkerProps {
+interface Props {
   area: number;
   center: LatLng;
   city: string;
@@ -14,7 +14,7 @@ interface MapMarkerProps {
   state: string;
 }
 
-export function MapMarker(props: MapMarkerProps) {
+export function MapMarker(props: Props) {
   const i18n = useTranslations('reportPage.labels.geolocationPanel');
   const { area, center, city, farmId, state } = props;
   const [isMarkerInfoOpen, setMarkerInfoOpen] = useState<boolean>(false);
@@ -35,7 +35,9 @@ export function MapMarker(props: MapMarkerProps) {
             setMarkerInfoOpen(false);
           }}
         >
-          <article className={`py-2 px-1 ${archivo.className}`}>
+          <article
+            className={`py-2 px-1 ${archivo.className} animate-fade-up animate-duration-200`}
+          >
             <div className="mb-1 break-words">
               <span className="font-bold">{i18n('farmId')}: </span>
               {farmId}

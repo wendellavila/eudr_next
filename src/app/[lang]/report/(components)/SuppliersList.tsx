@@ -66,7 +66,7 @@ export function SuppliersList() {
 
   return (
     <section id="suppliers-list" className="p-4 flex flex-col items-center">
-      <Card className="max-w-[1200px] w-full">
+      <Card className="max-w-[1200px] w-full animate-fade-up animate-duration-700">
         <CardHeader
           icon={
             <Iconify icon="ic:round-agriculture" width={31} className="mr-3" />
