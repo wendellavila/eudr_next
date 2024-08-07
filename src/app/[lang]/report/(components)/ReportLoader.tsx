@@ -8,6 +8,7 @@ import { ReportNavbar } from './ReportNavbar';
 import { UserProfile } from '@/components/UserProfile';
 import { useUserDataContext } from '@/context/UserDataContext';
 import { useReportDataContext } from '@/context/ReportDataContext';
+import { MapsProvider } from './MapsProvider';
 
 export function ReportLoader() {
   const router = useRouter();
@@ -50,7 +51,9 @@ export function ReportLoader() {
             <div className="flex flex-col grow px-4 lg:px-8 justify-between min-h-full">
               <div className="grow">
                 <OrderDetails />
-                <SuppliersList />
+                <MapsProvider>
+                  <SuppliersList />
+                </MapsProvider>
               </div>
               <CopyrightText className="mt-4 mb-2" />
             </div>

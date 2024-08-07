@@ -1,10 +1,10 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import { Card, Grid, Typography } from '@mui/material';
-import { MapViewer } from './MapViewer';
+import { MapViewer } from './MapViewer/MapViewer';
 import { GeoJsonLngLat } from '@/typing/types';
 
-interface GeolocationTabProps {
+export interface Props {
   id?: string;
   farmId: string;
   coordinates: GeoJsonLngLat[];
@@ -14,7 +14,7 @@ interface GeolocationTabProps {
   mapRef: React.RefObject<HTMLDivElement>;
 }
 
-export function GeolocationTab(props: GeolocationTabProps) {
+export function GeolocationTab(props: Props) {
   const i18n = useTranslations('reportPage.labels.geolocationPanel');
 
   const { id, farmId, city, state, area } = props;
