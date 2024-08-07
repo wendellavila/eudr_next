@@ -27,13 +27,13 @@ function formatISODate(isoDate: string) {
   return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 }
 
-interface ProtocolTabProps {
+interface Props {
   id?: string;
   lastUpdate: string;
   protocolData: ProtocolData[];
 }
 
-export function ProtocolTab(props: ProtocolTabProps) {
+export function ProtocolTab(props: Props) {
   const i18n = useTranslations('reportPage.labels.reportsPanel');
   const lang = useParams().lang as string;
   const isSmall = useMediaQuery(theme.breakpoints.down('md'));

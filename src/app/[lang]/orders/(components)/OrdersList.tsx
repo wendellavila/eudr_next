@@ -17,7 +17,7 @@ interface OrderDataItem {
   volume: number;
   customerName?: string;
 }
-interface OrdersListProps {
+interface Props {
   ordersData?: OrderDataItem[] | null;
   searchText: string;
   minDate: string;
@@ -85,7 +85,7 @@ function sortOrders(orders: OrderDataItem[], sortBy: SortBy) {
   }
 }
 
-export function OrdersList(props: OrdersListProps) {
+export function OrdersList(props: Props) {
   const lang = useParams().lang as string;
   const i18n = useTranslations('ordersPage.labels.orders');
 

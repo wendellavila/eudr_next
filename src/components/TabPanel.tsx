@@ -1,12 +1,12 @@
 'use client';
 
-interface TabPanelProps {
+interface Props {
   value: number;
   index: number;
   children: React.ReactNode;
 }
 
-export function TabPanel(props: TabPanelProps) {
+export function TabPanel(props: Props) {
   const { value, index, children } = props;
   return (
     <div

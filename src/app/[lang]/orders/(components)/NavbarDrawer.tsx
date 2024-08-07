@@ -16,14 +16,14 @@ import { LanguageSelector } from '@/components/LanguageSelector';
 import { SetState } from '@/typing/types';
 import { basePath } from '@/utils/constants';
 
-interface NavbarDrawerProps {
+interface Props {
   customerName: string;
   isDrawerOpen: boolean;
   setDrawerOpen: SetState<boolean>;
   logo?: string;
 }
 
-export function NavbarDrawer(props: NavbarDrawerProps) {
+export function NavbarDrawer(props: Props) {
   const { customerName, isDrawerOpen, setDrawerOpen, logo } = props;
 
   const i18n = useTranslations('ordersPage.labels.drawer');

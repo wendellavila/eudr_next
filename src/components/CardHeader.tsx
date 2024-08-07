@@ -1,13 +1,13 @@
 'use client';
 import { ComponentProps } from '@/typing/props';
 
-interface CardHeaderProps extends ComponentProps {
+interface Props extends ComponentProps {
   title: string;
   icon?: React.ReactNode;
   actions?: React.ReactNode;
 }
 
-export function CardHeader(props: CardHeaderProps) {
+export function CardHeader(props: Props) {
   const { title, icon, actions, className } = props;
   return (
     <div

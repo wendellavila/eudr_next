@@ -3,7 +3,7 @@ import { Drawer } from '@mui/material';
 import { SetState } from '@/typing/types';
 import { UserProfile } from './UserProfile';
 
-interface NavbarDrawerProps {
+interface Props {
   customerName?: string;
   customerId?: string;
   logo?: string;
@@ -11,7 +11,7 @@ interface NavbarDrawerProps {
   setDrawerOpen: SetState<boolean>;
 }
 
-export function NavbarDrawer(props: NavbarDrawerProps) {
+export function NavbarDrawer(props: Props) {
   const { customerId, customerName, isDrawerOpen, setDrawerOpen, logo } = props;
 
   return (

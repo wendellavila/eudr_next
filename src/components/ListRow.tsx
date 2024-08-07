@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ComponentProps } from '@/typing/props';
 import { ComponentType, SetState } from '@/typing/types';
 
-interface ListRowLinkProps extends ComponentProps {
+interface ListRowHrefProps extends ComponentProps {
   href: string;
 }
 
@@ -20,7 +20,7 @@ interface ListRowComponentTypeProps extends ComponentProps {
 export type ListRowProps =
   | ListRowComponentTypeProps
   | ListRowPanelProps
-  | ListRowLinkProps;
+  | ListRowHrefProps;
 
 export function ListRow(props: ListRowProps) {
   const ComponentWrapper =

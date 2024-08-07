@@ -9,11 +9,11 @@ import { ProtocolTab } from './ProtocolTab';
 import { GeolocationTab } from './GeolocationTab';
 import { ExportFileMenu } from './ExportFileMenu/ExportFileMenu';
 
-interface SupplierTabsProps extends SupplierDataProps {
+interface Props extends SupplierDataProps {
   mapRef: React.RefObject<HTMLDivElement>;
 }
 
-export function SupplierTabs(props: SupplierTabsProps) {
+export function SupplierTabs(props: Props) {
   const [activeTab, setActiveTab] = useState<0 | 1>(0);
   const i18n = useTranslations('reportPage.labels.suppliersList');
 

@@ -7,7 +7,7 @@ import { I18n, SetState } from '@/typing/types';
 import { ComponentProps } from '@/typing/props';
 import { basePath } from '@/utils/constants';
 
-interface NavbarProps extends ComponentProps {
+interface Props extends ComponentProps {
   titleAppend?: string | undefined;
   i18n: I18n;
   drawer?: React.ReactNode;
@@ -15,7 +15,7 @@ interface NavbarProps extends ComponentProps {
   onBackButton?: () => void;
 }
 
-export function Navbar(props: NavbarProps) {
+export function Navbar(props: Props) {
   const router = useRouter();
   const hasDrawer = props.drawer && props.setDrawerOpen;
 
