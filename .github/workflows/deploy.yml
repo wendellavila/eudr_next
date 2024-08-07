@@ -28,9 +28,9 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
 
-      - name: Create .env.local with repo secrets
-        run: |
-          echo "NEXT_PUBLIC_MAPS_API_KEY=\"$API_MAPS_KEY\"" > .env.local
+      #- name: Create .env.local with repo secrets
+      #  run: |
+      #    echo "NEXT_PUBLIC_MAPS_API_KEY=\"$API_MAPS_KEY\"" > .env.local
 
       - name: Build Next.js project
         run: npm run build
