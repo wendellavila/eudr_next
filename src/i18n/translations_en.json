@@ -155,7 +155,8 @@
                 "state": "State",
                 "area": "Area (ha)",
                 "viewOnMaps": "View on Google Maps",
-                "geolocationNotFound": "Supplier geolocation could not be retrieved."
+                "geolocationNotFound": "Supplier geolocation could not be retrieved.",
+                "mapUnavailable": "Map unavailable."
             },
             "reportsPanel": {
                 "title": "Deforestation Reports",

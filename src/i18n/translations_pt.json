@@ -155,7 +155,8 @@
                 "state": "Estado",
                 "area": "Área (ha)",
                 "viewOnMaps": "Ver no Google Maps",
-                "geolocationNotFound": "Não foi possível recuperar a geolocalização desse fornecedor."
+                "geolocationNotFound": "Não foi possível recuperar a geolocalização desse fornecedor.",
+                "mapUnavailable": "Mapa indisponível."
             },
             "reportsPanel": {
                 "title": "Laudos Ambientais",
