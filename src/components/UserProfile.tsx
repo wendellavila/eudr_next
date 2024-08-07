@@ -92,7 +92,7 @@ function UserProfileContent(props: Props) {
     <>
       <div
         className="flex flex-col items-center pt-7 pb-6
-        justify-center relative bg-coffee-400"
+        justify-center relative bg-primary"
       >
         <Image
           src={`${basePath}/cafe-grao.jpg`}
@@ -118,7 +118,7 @@ function UserProfileContent(props: Props) {
           </span>
         )}
       </div>
-      <div className="flex flex-col justify-between grow">
+      <div className="flex flex-col justify-between grow overflow-x-hidden">
         <nav className="flex flex-col justify-center mt-4">
           {listItems.map((item, index) => (
             <div

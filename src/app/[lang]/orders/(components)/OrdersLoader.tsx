@@ -76,7 +76,7 @@ export function OrdersLoader() {
           userData.role === 'admin'
         }
       />
-      <div className="flex flex-row grow">
+      <div className="flex flex-row grow bg-avocado-100">
         <UserProfile
           card
           className="hidden lg:flex h-screen"
@@ -91,7 +91,7 @@ export function OrdersLoader() {
               : undefined
           }
         />
-        <main className="flex flex-col grow bg-avocado-100">
+        <main className="flex flex-col grow">
           <OrdersNavbar
             className="hidden lg:flex"
             customerId={userData ? userData.customerId : undefined}
