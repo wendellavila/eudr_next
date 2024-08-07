@@ -4,9 +4,11 @@ import { Iconify } from '@/components/Iconify';
 import { useParams } from 'next/navigation';
 import { ReportData, SetState, SupplierData } from '@/typing/types';
 
-import { downloadExcel, downloadGeoJSON, downloadKML } from './functions';
+import { downloadExcel } from './downloadExcel';
+import { downloadGeoJson } from './downloadGeoJson';
+import { downloadKML } from './downloadKML';
 
-interface ExportFileMenuProps {
+interface Props {
   data: ReportData | SupplierData;
   mapRef?: React.RefObject<HTMLDivElement>;
   title?: string;
@@ -21,7 +23,7 @@ interface ExportFileMenuProps {
   isoDate?: string;
 }
 
-export function ExportFileMenu(props: ExportFileMenuProps) {
+export function ExportFileMenu(props: Props) {
   const lang = useParams().lang as string;
   const {
     data,
@@ -43,7 +45,7 @@ export function ExportFileMenu(props: ExportFileMenuProps) {
     if (format === 'excel') {
       downloadExcel(data, isoDate, lang);
     } else if (format === 'geojson') {
-      downloadGeoJSON(data, isoDate);
+      downloadGeoJson(data, isoDate);
     } else if (format === 'kml') {
       downloadKML(data, isoDate);
     } else if (
@@ -112,7 +114,7 @@ export function ExportFileMenu(props: ExportFileMenuProps) {
             onClick={() => onMenuClose('jpg')}
           >
             <Iconify icon="mdi:image-outline" className="mr-3" />
-            Image
+            JPG
           </MenuItem>
         )}
       </div>
