@@ -92,7 +92,7 @@ function UserProfileContent(props: Props) {
     <>
       <div
         className="flex flex-col items-center pt-7 pb-6
-        justify-center relative bg-primary"
+        justify-center relative bg-coffee-400"
       >
         <Image
           src={`${basePath}/cafe-grao.jpg`}

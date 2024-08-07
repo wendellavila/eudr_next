@@ -35,7 +35,7 @@ export function SourcesGallery() {
             alt={`${source.institution} - Logo`}
             title={source.institution}
             className="inline w-auto h-[90px] hover:scale-110 duration-300
-              bg-white p-4 drop-shadow-sm hover:bg-[#fff6ee]"
+              bg-white p-4 drop-shadow-sm hover:bg-coffee-50"
           />
         </a>
       ))}

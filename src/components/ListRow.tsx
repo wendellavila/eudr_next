@@ -57,7 +57,7 @@ export function ListRow(props: ListRowProps) {
         </div>
       )}
       {hasPanel && props.isOpen === true && (
-        <div className={`p-4 bg-[#abada3]`}>{props.panel}</div>
+        <div className="p-4 bg-avocado-200">{props.panel}</div>
       )}
     </ComponentWrapper>
   );

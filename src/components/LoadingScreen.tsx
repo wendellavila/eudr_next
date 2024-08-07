@@ -40,7 +40,7 @@ export function LoadingScreen(props: Props) {
       <Iconify
         icon="svg-spinners:3-dots-fade"
         width={40}
-        className="text-tertiary"
+        className="text-avocado-400"
       />
       <p className="text-sm absolute bottom-3 animate-fade animate-delay-1000">
         {`${i18n('notRedirected')} `}

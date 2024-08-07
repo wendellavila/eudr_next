@@ -24,7 +24,7 @@ export default async function InternationalizedLayout({
     <html lang={lang}>
       <body
         className={`m-0 box-border ${archivo.className} min-h-dvh
-      bg-surface text-foreground  selection:bg-primary/25 flex flex-col
+      bg-white text-foreground  selection:bg-coffee-400/25 flex flex-col
       `}
       >
         <NextIntlClientProvider

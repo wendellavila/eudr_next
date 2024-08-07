@@ -41,7 +41,7 @@ export function FrontSection(props: BannerScrollProps) {
       component="section"
       id="front-section"
       className="lg:min-h-dvh box-border bg-cover
-      bg-center bg-no-repeat bg-tertiary grow relative"
+      bg-center bg-no-repeat bg-avocado-400 grow relative"
     >
       <Image
         src={`${basePath}/cafe-${getRandomInt(0, 9, dateToInt())}.jpg`}

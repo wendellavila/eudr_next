@@ -27,11 +27,20 @@ const config: Config = {
     extend: {
       colors: {
         foreground: '#1d1b19',
-        primary: '#74533b',
-        primaryDark: '#503629',
-        secondary: ' #EADAD0',
-        tertiary: ' #A0BF7F',
-        surface: '#eef0e8',
+        coffee: {
+          50: '#FFF6EE',
+          100: '#EADAD0',
+          400: '#ad805f',
+          600: '#74533B',
+          700: '#503629',
+        },
+        avocado: {
+          100: '#EEF0E8',
+          200: '#d1d4c7',
+          300: '#ABADA3',
+          400: '#A0BF7F',
+          700: '#649134',
+        },
         ...colors,
       },
     },

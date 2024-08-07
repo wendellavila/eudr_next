@@ -24,7 +24,7 @@ export function AboutSection(props: BannerScrollProps) {
     <section
       ref={aboutRef}
       id="about"
-      className="bg-secondary text-primaryDark pattern-autumn-orange-500/5
+      className="bg-coffee-100 text-coffee-700 pattern-autumn-orange-500/5
       overflow-hidden p-14 xs:p-8"
     >
       <h2

@@ -91,7 +91,7 @@ export function OrdersLoader() {
               : undefined
           }
         />
-        <main className="flex flex-col grow">
+        <main className="flex flex-col grow bg-avocado-100">
           <OrdersNavbar
             className="hidden lg:flex"
             customerId={userData ? userData.customerId : undefined}

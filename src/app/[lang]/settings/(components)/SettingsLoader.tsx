@@ -25,7 +25,7 @@ export function SettingsLoader() {
   return (
     <>
       <SettingsNavbar className="flex lg:hidden" userData={userData} />
-      <div className="flex flex-row grow">
+      <div className="flex flex-row grow bg-avocado-100">
         <UserProfile
           card
           hideSettings

@@ -49,7 +49,7 @@ export function NavbarDrawer(props: NavbarDrawerProps) {
         <List className="w-[350px] h-full flex flex-col py-0">
           <div
             className="flex flex-col items-center pt-7 pb-6
-            justify-center relative bg-primary"
+            justify-center relative bg-coffee-400"
           >
             <Image
               src={`${basePath}/cafe-grao.jpg`}

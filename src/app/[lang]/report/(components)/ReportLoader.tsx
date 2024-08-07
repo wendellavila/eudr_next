@@ -30,7 +30,7 @@ export function ReportLoader() {
         titleAppend={reportData ? reportData.orderNumber : undefined}
       />
 
-      <div className="flex flex-row grow">
+      <div className="flex flex-row grow bg-avocado-100">
         <UserProfile
           card
           className="hidden lg:flex h-screen"

@@ -36,7 +36,7 @@ export function DashboardLoader() {
         customerId={userData ? userData.customerId : undefined}
         customerName={userData ? userData.customerName : undefined}
       />
-      <div className="flex flex-row grow">
+      <div className="flex flex-row grow bg-avocado-100">
         <UserProfile
           card
           className="hidden lg:flex h-screen"
@@ -53,9 +53,9 @@ export function DashboardLoader() {
             customerName={userData ? userData.customerName : undefined}
           />
           <Scrollbars universal className="flex flex-col">
-            <div className="flex flex-col px-4 lg:px-8 justify-between min-h-full">
+            <div className=" flex flex-col px-4 lg:px-8 justify-between min-h-full">
               <div className="grow">
-                <Grid container spacing={2} className="mt-2 lg:mt-4">
+                <Grid container spacing={2} className="mt-2 lg:mt-4 ">
                   <Grid item xs={12} xl={4}>
                     <OrdersLink />
                   </Grid>
